@@ -1,0 +1,6 @@
+2024/02/08-21:13:54.657 2a1a8 Creating DB /home/rahul/.config/Zenkit/IndexedDB/https_base.zenkit.com_0.indexeddb.leveldb since it was missing.
+2024/02/08-21:13:54.666 2a1a8 Reusing MANIFEST /home/rahul/.config/Zenkit/IndexedDB/https_base.zenkit.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/02/08-21:13:54.768 2a1a8 Level-0 table #5: started
+2024/02/08-21:13:54.771 2a1a8 Level-0 table #5: 14072 bytes OK
+2024/02/08-21:13:54.772 2a1a8 Delete type=0 #3
+2024/02/08-21:13:54.773 2a1a8 Manual compaction at level-0 from '\x00\x01\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x02\x00\x00\x00' @ 0 : 0; will stop at (end)

@@ -8,9 +8,18 @@
 :set mouse=a
 :set ignorecase
 
-map  <C-l> :tabn<CR>
-map  <C-h> :tabp<CR>
-map  <C-n> :tabnew<CR>
+nnoremap  <C-O> :tabn<CR>
+nnoremap  <C-U> :tabp<CR>
+nnoremap  <C-I> :tabnew<CR>
+
+noremap <C-J> <C-W>j
+noremap <C-K> <C-W>k
+noremap <C-H> <C-W>h
+noremap <C-L> <C-W>l
+
+cnoreabbrev term term<CR><C-W>7-
+
+:tnoremap <Esc> <C-\><C-n>
 
 call plug#begin()
 
@@ -23,10 +32,11 @@ Plug 'https://github.com/ap/vim-css-color' " CSS Color Preview
 Plug 'https://github.com/rafi/awesome-vim-colorschemes' " Retro Scheme
 Plug 'neoclide/coc.nvim', {'branch': 'release'}  " Auto Completion
 Plug 'https://github.com/ryanoasis/vim-devicons' " Developer Icons
-Plug 'https://github.com/tc50cal/vim-terminal' " Vim Terminal
 Plug 'https://github.com/preservim/tagbar' " Tagbar for code navigation
 Plug 'https://github.com/terryma/vim-multiple-cursors' " CTRL + N for multiple cursors
 Plug 'https://github.com/lambdalisue/suda.vim/' " Sudo
+Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' } "Python colorsscheme
+Plug 'https://github.com/numirias/semshi' "Python colorscheme
 
 set encoding=UTF-8
 
@@ -35,6 +45,17 @@ call plug#end()
 nnoremap <C-t> :NERDTreeToggle<CR>
 
 nmap <F8> :TagbarToggle<CR>
+
+let g:semshi#filetypes = ['python']
+let g:semshi#excluded_hl_groups	= ['local']
+let g:semshi#mark_selected_nodes = 1
+let g:semshi#no_default_builtin_highlight = v:true
+let g:semshi#simplify_markup = v:true
+let g:semshi#error_sign	= v:true
+let g:semshi#error_sign_delay = 1.5
+let g:semshi#always_update_all_highlights = v:true
+let g:semshi#tolerate_syntax_errors = v:true
+let g:semshi#self_to_attribute = v:true
 
 :set completeopt-=preview " For No Previews
 

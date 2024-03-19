@@ -29,6 +29,8 @@
 "modules-right": [
 	"tray",
 	"custom/separator#line",
+	//"custom/swaync",
+	//"custom/separator#line",
 	//"network#speed",
 	"group/motherboard",
 	"custom/separator#line",
