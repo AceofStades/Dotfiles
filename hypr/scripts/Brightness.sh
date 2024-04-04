@@ -13,7 +13,11 @@ get_backlight() {
 # Get icons
 get_icon() {
 	current=$(get_backlight | sed 's/%//')
-	if   [ "$current" -le "20" ]; then
+	# if   [ "$current" -le "20" ]; then
+	# 	icon="$iDIR/brightness-20.png"
+	if [[ "$current" -eq "0" ]]; then  # Check if current is exactly equal to 0
+		change_backlight "1%"  # Set brightness to 1% if it's 0
+	elif [[ "$current" -le "20" ]]; then
 		icon="$iDIR/brightness-20.png"
 	elif [ "$current" -le "40" ]; then
 		icon="$iDIR/brightness-40.png"

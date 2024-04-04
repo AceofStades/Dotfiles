@@ -17,7 +17,9 @@ noremap <C-K> <C-W>k
 noremap <C-H> <C-W>h
 noremap <C-L> <C-W>l
 
-cnoreabbrev term term<CR><C-W>7-
+"cnoreabbrev term :split<CR>:term<CR><C-W>7-
+cnoreabbrev term :split<CR><C-W>j:term<CR>:resize 12<CR>
+noremap <C-0> <C-W>l<C-W>j<C-W>=:resize 12<CR>
 
 :tnoremap <Esc> <C-\><C-n>
 
@@ -37,6 +39,10 @@ Plug 'https://github.com/terryma/vim-multiple-cursors' " CTRL + N for multiple c
 Plug 'https://github.com/lambdalisue/suda.vim/' " Sudo
 Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' } "Python colorsscheme
 Plug 'https://github.com/numirias/semshi' "Python colorscheme
+Plug 'github/copilot.vim' "Copilot so yes
+Plug 'zbirenbaum/copilot.lua'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'CopilotC-Nvim/CopilotChat.nvim', { 'branch': 'canary' }
 
 set encoding=UTF-8
 
@@ -94,3 +100,12 @@ augroup fish_syntax
 	au!
 	autocmd BufNewFile,BufRead *.fish set syntax=sh
 augroup end
+
+autocmd ColorScheme abstract
+  \ highlight CopilotSuggestion guifg=#555555 ctermfg=8
+
+lua << EOF
+require("CopilotChat").setup {
+  debug = true, -- Enable debugging
+  -- See Configuration section for rest
+}
