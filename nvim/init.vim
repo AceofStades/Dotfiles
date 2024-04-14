@@ -23,6 +23,83 @@ noremap <C-0> <C-W>l<C-W>j<C-W>=:resize 12<CR>
 
 :tnoremap <Esc> <C-\><C-n>
 
+noremap <C-p> :FZF<CR>
+
+
+
+
+
+
+
+" Set C++ file type
+autocmd BufNewFile,BufRead *.cpp set filetype=cpp
+
+" Compile and run C++ program in subshell
+" function! CompileAndRun()
+"   let fileName = expand('%')
+"   if fileName =~ '\.cpp$'
+"     let exeName = substitute(fileName, '\.cpp$', '', '')
+"     execute 'w | !g++ -std=c++20 -Wall -Wextra -Wpedantic -O2 -o ' . exeName . ' ' . fileName
+"     if v:shell_error == 0
+"       let cmd = "kitty -e bash -c './" . exeName . "; read -p \"Press enter to exit...\"'"
+"       call system(cmd)
+"       redraw!
+"     endif
+"   else
+"     echo 'Not a C++ file'
+"   endif
+" endfunction
+
+function! CompileAndRun()
+  let fileName = expand('%')
+
+  " Check file extension and choose compiler/interpreter"
+  if fileName =~ '\.cpp$'
+    let compiler = 'g++'
+    let flags = '-std=c++20 -Wall -Wextra -Wpedantic -O2'
+    let exeName = substitute(fileName, '\.cpp$', '', '')
+  elseif fileName =~ '\.c$'
+    let compiler = 'gcc'
+    let flags = '-Wall -Wextra -Wpedantic -O2'
+    let exeName = substitute(fileName, '\.c$', '', '')
+  elseif fileName =~ '\.py$'
+    let compiler = 'python'  " No compilation needed for Python"
+    let exeName = fileName   " Executable name is the filename itself"
+  else
+    echo 'Unsupported file type'
+    return
+  endif
+
+  " Compile (if needed) and run the program"
+  if compiler != 'python'
+    execute '!' . compiler . ' ' . flags . ' -o ' . exeName . ' ' . fileName
+    if v:shell_error == 0
+      let cmd = "kitty -e bash -c './" . exeName . "; read -p \"Press enter to exit...\"'"
+      call system(cmd)
+      redraw!
+    else
+      echoerr 'Compilation failed!'
+    endif
+  else
+    " execute '!' . compiler . ' ' . fileName
+	let cmd = "kitty -e bash -c 'python " . exeName . "; read -p \"Press enter to exit...\"'"
+	call system(cmd)
+	redraw!  " Redraw after running Python script"
+  endif
+endfunction
+
+
+" Map keys to compile and run current file
+map <F5> :call CompileAndRun()<CR>
+map <F9> :w<CR>:!clear<CR>:call CompileAndRun()<CR>
+nnoremap <A-o> :call CompileAndRun()<CR>
+
+
+
+
+
+
+
 call plug#begin()
 
 Plug 'http://github.com/tpope/vim-surround' " Surrounding ysw)
@@ -40,9 +117,8 @@ Plug 'https://github.com/lambdalisue/suda.vim/' " Sudo
 Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' } "Python colorsscheme
 Plug 'https://github.com/numirias/semshi' "Python colorscheme
 Plug 'github/copilot.vim' "Copilot so yes
-Plug 'zbirenbaum/copilot.lua'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'CopilotC-Nvim/CopilotChat.nvim', { 'branch': 'canary' }
+Plug 'jiangmiao/auto-pairs' " Auto Pairs
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " Fuzzy finder
 
 set encoding=UTF-8
 
@@ -78,6 +154,8 @@ let g:NERDTreeDirArrowCollapsible="~"
 " :CocInstall coc-snippets
 " :CocCommand snippets.edit... FOR EACH FILE TYPE
 
+source ~/.config/nvim/coc.vim
+
 " air-line
 let g:airline_powerline_fonts = 1
 
@@ -95,6 +173,9 @@ let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 
 inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
+imap <silent><script><expr> <S-Tab> copilot#Accept("\<CR>")
+let g:copilot_no_tab_map = v:true
+
 
 augroup fish_syntax
 	au!
@@ -104,8 +185,6 @@ augroup end
 autocmd ColorScheme abstract
   \ highlight CopilotSuggestion guifg=#555555 ctermfg=8
 
-lua << EOF
-require("CopilotChat").setup {
-  debug = true, -- Enable debugging
-  -- See Configuration section for rest
-}
+:set signcolumn=no
+
+
