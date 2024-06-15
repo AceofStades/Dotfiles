@@ -9,11 +9,10 @@
     "lazyvim.plugins.extras.lang.json",
     "lazyvim.plugins.extras.lang.markdown",
     "lazyvim.plugins.extras.lang.python",
-    "lazyvim.plugins.extras.lang.python-semshi",
     "lazyvim.plugins.extras.lang.rust"
   ],
   "news": {
-    "NEWS.md": "4885"
+    "NEWS.md": "5950"
   },
-  "version": 3
+  "version": 6
 }

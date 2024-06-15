@@ -1,8 +1,16 @@
 /* ----------- 💫 https://github.com/JaKooLit 💫 -------- */
 /* ..........................................*/
-/* .......Crystal Clear....................... */
+/* ....Wallust - Clear Background........ */
 /* ......................................... */
-/* --- 👍 designed by https://github.com/Krautt  👍 --- */
+/* --- 👍 original designed by https://github.com/Krautt  👍 --- */
+
+@import '../../.config/waybar/wallust/colors-waybar.css';
+
+@define-color critical #ff0000; /* critical color */
+@define-color warning #f3f809;  /* warning color */
+@define-color text @color12;  /* text color */
+@define-color text-alt @color9;  /* text alternative color */
+@define-color bg @color7;  /* background color */
 
 *{
 	font-family: "JetBrains Mono Nerd Font";
@@ -17,7 +25,7 @@
 window#waybar {
 	background:transparent;
 	border-radius: 1px;
-	color: whitesmoke;
+	color: @text;
 }
 	
 window#waybar.hidden {
@@ -48,7 +56,7 @@ window#waybar.empty #window {
 }
 
 #workspaces button {
-	color: #6E6A86;
+	color: @text-alt;
    	box-shadow: none;
 	text-shadow: none;
    	padding: 0px;
@@ -59,8 +67,9 @@ window#waybar.empty #window {
    	transition: all 0.5s cubic-bezier(.55,-0.68,.48,1.682);
 }
    
+#taskbar button.active,
 #workspaces button.active {
-	color: whitesmoke;
+	color: @text;
    	border-radius: 15px 15px 15px 15px;
    	padding-left: 8px;
    	padding-right: 8px;
@@ -69,16 +78,17 @@ window#waybar.empty #window {
 }
   
 #workspaces button.focused {
-	color: #d8dee9;
+	color: @text-alt;
 }
    
 #workspaces button.urgent {
-	color: #11111b;
+	color: @warning;
 	border-radius: 10px;
 }
-	   
+
+#taskbar button:hover,	   
 #workspaces button:hover {
-	color: whitesmoke;
+	color: @text;
     border-radius: 15px;
  	padding-left: 2px;
     padding-right: 2px;
@@ -100,7 +110,6 @@ window#waybar.empty #window {
 #network,
 #power-profiles-daemon,
 #pulseaudio,
-#taskbar,
 #temperature,
 #tray,
 #window,
@@ -143,23 +152,9 @@ window#waybar.empty #window {
 	color: #000000;
 	   }
 }
-#taskbar button:hover {
-    padding-left: 3px;
-    padding-right: 3px;
-    animation: gradient_f 20s ease-in infinite;
-    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
-}
-   
-#taskbar button.active {
-	background-color: #7f849c;
-    padding-left: 12px;
-    padding-right: 12px;
-    animation: gradient_f 20s ease-in infinite;
-    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
-}
 	   
 #battery.critical:not(.charging) {
-	color: #f53c3c;
+	color: @critical;
 	animation-name: blink;
 	animation-duration: 0.5s;
 	animation-timing-function: linear;

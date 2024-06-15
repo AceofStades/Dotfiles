@@ -38,12 +38,11 @@ tooltip label{
 }
 /*-----module groups----*/
 .modules-right {
-	background-color: rgba(0,0,0,0.3);
+	background-color: black;
 	color: white;
-	opacity: 0.8;
 	border-bottom: 1px;
 	border-style: solid;
-	border-color: transparent;
+	border-color: white;
 	border-radius: 10px;
 	padding-top: 2px;
 	padding-bottom: 2px;
@@ -119,6 +118,7 @@ tooltip label{
 #mode,
 #mpris,
 #network,
+#power-profiles-daemon,
 #pulseaudio,
 #pulseaudio-slider,
 #taskbar,
@@ -129,7 +129,7 @@ tooltip label{
 #workspaces,
 #custom-backlight,
 #custom-cycle_wall,
-#custom-keybinds,
+#custom-hint,
 #custom-keyboard,
 #custom-light_dark,
 #custom-lock,

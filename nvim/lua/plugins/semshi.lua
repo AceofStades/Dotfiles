@@ -2,6 +2,7 @@ return {
     {
         -- "numiras/semshi",
         "wookayin/semshi", -- use a maintained fork
+        config = false,
         ft = "python",
         build = ":UpdateRemotePlugins",
         init = function()

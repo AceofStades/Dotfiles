@@ -1,81 +1,82 @@
-/* ---- 💫 https://github.com/JaKooLit 💫 ---- */
-/* Light - MonoChrome Contrast */
+/* ----------- 💫 https://github.com/JaKooLit 💫 -------- */
+/* ..........................................*/
+/* .......Mauve....................... */
+/* ......................................... */
+/* --- 👍 designed by https://github.com/CelestiaKai  👍 --- */
 
 * {
-font-family: "JetBrainsMono Nerd Font";
-font-weight: bold;
-min-height: 0;
-/* set font-size to 100% if font scaling is set to 1.00 using nwg-look */
-font-size: 97%;
-font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
-padding: 1px;
+	font-family: "JetBrainsMono Nerd Font";
+	font-weight: bold;
+	min-height: 0;		
+	/* set font-size to 100% if font scaling is set to 1.00 using nwg-look */
+	font-size: 97%;
+	font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
+	padding: 2px;
 }
 
 window#waybar {
-	background: transparent;
+	background: #11111b;
+	color: #cba6f7;
+	/* background-color: transparent; */
+}
+
+window#waybar.hidden {
+	opacity: 0.5;
 }
 
 window#waybar.empty {
 	background-color: transparent;
+	background: #11111b;
 }
 
 window#waybar.empty #window {
+	padding: 0px;
+	border: 0px;
+	/*  background-color: rgba(66,66,66,0.5); */
+	/* transparent */
 	background-color: transparent;
 }
 
 tooltip {
-	color: white;
 	background: #1e1e2e;
-	opacity: 0.8;
 	border-radius: 10px;
 	border-width: 2px;
 	border-style: solid;
-	border-color: white;
+	border-color: #11111b;
+	color: #cba6f7;
 }
 
-tooltip label{
-	color: #cdd6f4;
-}
 /*-----module groups----*/
 .modules-right {
-	background-color: white;
-	color: black;
-	border-bottom: 2px;
-	border-style: solid;
-	border-color: black;
-	border-radius: 10px;
+	border: 3px solid #11111b;
+	border-radius: 10px 10px 10px 10px;
+	background-color: #1e1e2e;
 	padding-top: 2px;
 	padding-bottom: 2px;
 	padding-right: 4px;
 	padding-left: 4px;
 }
+
 .modules-center {
-	background-color: white;
-	color: black;
-	border-bottom: 2px;
-	border-style: solid;
-	border-color: black;
-	border-radius: 10px;
 	padding-top: 2px;
 	padding-bottom: 2px;
 	padding-right: 4px;
 	padding-left: 4px;
 }
+
 .modules-left {
-	background-color: white;
-	color: black;
-	border-bottom: 2px;
-	border-style: solid;
-	border-color: black;
-	border-radius: 10px;
+	/*background-color: #1e1e2e;*/
+	border: 3px solid #11111b;
+	border-radius: 10px 10px 10px 10px;
+	background-color: #1e1e2e;
 	padding-top: 2px;
 	padding-bottom: 2px;
 	padding-right: 4px;
 	padding-left: 4px;
 }
-/*-----modules indv----*/
+
 #workspaces button {
-	color: black;
+	color: #6E6A86;
     box-shadow: none;
 	text-shadow: none;
     padding: 0px;
@@ -85,25 +86,45 @@ tooltip label{
     animation: gradient_f 20s ease-in infinite;
     transition: all 0.5s cubic-bezier(.55,-0.68,.48,1.682);
 }
-#workspaces button:hover {
-	color: grey;
-	background-color: rgba(0,153,153,0.2);
-    padding-left: 2px;
-    padding-right: 2px;
-    animation: gradient_f 20s ease-in infinite;
-    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
-}
 
 #workspaces button.active {
-	color: grey;
-    padding-left: 8px;
+	color: #1e1e1e;
+	border-radius: 30%;
+	background-color: #cba6f7;
+    padding-left: 6px;
     padding-right: 8px;
     animation: gradient_f 20s ease-in infinite;
     transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
 }
 
-#workspaces button.persistent {
-	border-radius: 10px;
+#workspaces button.active:hover {
+	color: #1e1e1e;
+	border-radius: 30%;
+	background-color: #cba6f7;
+	border: 0px solid #1e1e2e;
+    padding-left: 6px;
+    padding-right: 8px;
+}
+
+#workspaces button.focused {
+	color: #d8dee9;
+}
+
+#workspaces button.urgent {
+	border-radius: 30%;
+	background-color: #cba6f7;
+	color: #1e1e1e;
+}
+
+#workspaces button:hover {
+	color: #1e1e1e;
+	border: 3px solid #1e1e2e;
+	background-color: #cba6f7;
+    border-radius: 30%;
+ 	padding-left: 4px;
+    padding-right: 4px;
+    animation: gradient_f 20s ease-in infinite;
+    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
 }
 
 #backlight,
@@ -129,6 +150,7 @@ tooltip label{
 #wireplumber,
 #workspaces,
 #custom-backlight,
+#custom-cava_mviz,
 #custom-cycle_wall,
 #custom-hint,
 #custom-keyboard,
@@ -150,29 +172,37 @@ tooltip label{
 #custom-weather.showyIcyDay,
 #custom-weather.snowyIcyNight,
 #custom-weather.sunnyDay {
-	padding-top: 3px;
-	padding-bottom: 3px;
+	color: whitesmoke;
+	padding-top: 1px;
+	padding-bottom: 1px;
 	padding-right: 6px;
 	padding-left: 6px;
+
 }
-#custom-power {
-	padding: 1px 3px;
-}
-/*-----Indicators----*/
-#idle_inhibitor.activated {
-	color: #2dcc36;
-}
-#pulseaudio.muted {
-	color: #cc3436;
-}
+
 #temperature.critical {
-	color: #cc3436;
+	background-color: #ff0000;
 }
 
 @keyframes blink {
 	to {
 		color: #000000;
 	}
+}
+
+#taskbar button.active {
+	background-color: purple;
+    padding-left: 12px;
+    padding-right: 12px;
+    animation: gradient_f 20s ease-in infinite;
+    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+#taskbar button:hover {
+    padding-left: 3px;
+    padding-right: 3px;
+    animation: gradient_f 20s ease-in infinite;
+    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
 }
 
 #battery.critical:not(.charging) {
@@ -182,21 +212,6 @@ tooltip label{
 	animation-timing-function: linear;
 	animation-iteration-count: infinite;
 	animation-direction: alternate;
-}
-
-#taskbar button.active {
-	background-color: #7f849c;
-    padding-left: 6px;
-    padding-right: 6px;
-    animation: gradient_f 20s ease-in infinite;
-    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
-}
-
-#taskbar button:hover {
-    padding-left: 2px;
-    padding-right: 2px;
-    animation: gradient_f 20s ease-in infinite;
-    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
 }
 
 #pulseaudio-slider slider {
@@ -212,12 +227,13 @@ tooltip label{
 	min-width: 80px;
 	min-height: 5px;
 	border-radius: 5px;
-	background-color: grey;
+	background-color: #6E6A86;
 }
 
 #pulseaudio-slider highlight {
 	min-height: 10px;
 	border-radius: 5px;
+	background-color: purple;
 }
 
 #backlight-slider slider {
@@ -233,9 +249,11 @@ tooltip label{
 	min-width: 80px;
 	min-height: 10px;
 	border-radius: 5px;
+	background-color: #6E6A86;
 }
 
 #backlight-slider highlight {
 	min-width: 10px;
 	border-radius: 5px;
+	background-color: purple;
 }
