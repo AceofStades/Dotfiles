@@ -1,5 +1,5 @@
 /* ----------- 💫 https://github.com/JaKooLit 💫 -------- */
-/* ....Chroma Fusion Edge .... */
+/* ....Chroma Fusion .... */
 /* Wallust - Catpuccin */
 
 @define-color white      	#F2F2F2;
@@ -27,7 +27,6 @@
 	/* set font-size to 100% if font scaling is set to 1.00 using nwg-look */
 	font-size: 97%;
 	font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
-
 }
 
 window#waybar {
@@ -40,10 +39,11 @@ window#waybar {
     border-top-right-radius: 20px;
 }
 
-window#waybar.empty #window {    
+window#waybar.empty,
+window#waybar.empty #window {
     background-color: transparent;
+    padding: 0px;
     border: 0px;
-
 }
 
 tooltip {
@@ -66,6 +66,7 @@ tooltip {
 #keyboard-state,
 #memory,
 #mode,
+#mpris,
 #network,
 #power-profiles-daemon,
 #pulseaudio,
@@ -100,15 +101,18 @@ tooltip {
 #custom-weather.sunnyDay {
 	background-color: @background-module;
     border-radius: 25px;
-    padding: 0px 10px 0px 10px;
     margin: 5px 5px 5px 5px;
     opacity:0.8;
+   	padding-top: 4px;
+	padding-bottom: 4px;
+	padding-right: 6px;
+	padding-left: 6px;
 }
 #backlight {
 	padding: 0px 2px 0px 6px;
 }
 #custom-power {
-    color: @red;
+    color: red;
     padding: 0px 0px 0px 6px;
     opacity:1.0;
 }
@@ -117,6 +121,11 @@ tooltip {
     color: @flamingo;
     padding: 0px 8px 0px 4px;
     opacity:1.0;
+}
+
+#mpris {
+	color: @sapphire;
+	padding-right: 0px;
 }
 
 #custom-swaync,
@@ -177,20 +186,19 @@ tooltip {
     border-radius: 15px;
     border:0px;
     color: @color13;
-    padding-left: 4px;
-    padding-right: 4px;
+    padding-left: 2px;
+    padding-right: 2px;
     animation: gradient_f 20s ease-in infinite;
     transition: all 0.5s cubic-bezier(.55,-0.68,.48,1.682);
     opacity:0.8;
 }
 
-#workspaces button.active,
-#workspaces button.visible {
+#workspaces button.active {
     color: #FFFFFF;
     background: @button-color;
     border-radius: 15px;
-    padding-left: 8px;
-    padding-right: 8px;
+    padding-left: 4px;
+    padding-right: 4px;
     animation: gradient_f 20s ease-in infinite;
     transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
     opacity:1.0;
@@ -238,7 +246,7 @@ tooltip {
 }
 
 #temperature.critical {
-    background-color: @red;
+    background-color: red;
 }
 
 @keyframes blink {

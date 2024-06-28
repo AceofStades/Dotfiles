@@ -10,7 +10,6 @@ min-height: 0;
 /* set font-size to 100% if font scaling is set to 1.00 using nwg-look */
 font-size: 97%;
 font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
-padding: 1px;
 }
 
 window#waybar {
@@ -21,8 +20,15 @@ window#waybar {
 	border-color: @color12; 
 }
 
+window#waybar.empty,
+window#waybar.empty #window {
+    background-color: transparent;
+    padding: 0px;
+    border: 0px;
+}
+
 #workspaces {
-	background: #0F1419;
+	background: transparent;
 	padding: 0px 1px;
 	border-radius: 15px;
 	border: 0px;
@@ -112,8 +118,8 @@ tooltip {
 #custom-weather.showyIcyDay,
 #custom-weather.snowyIcyNight,
 #custom-weather.sunnyDay {
-	padding-top: 3px;
-	padding-bottom: 3px;
+	padding-top: 5px;
+	padding-bottom: 5px;
 	padding-right: 6px;
 	padding-left: 6px;
 }
@@ -209,6 +215,7 @@ tooltip {
 #custom-swaync,
 #custom-menu {
 	color: yellow;
+	padding-left: 8px;
 }
 #custom-power{
     color: #eba0ac; 
