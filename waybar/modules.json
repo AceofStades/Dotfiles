@@ -359,6 +359,7 @@
     },
     // Battery
     "battery": {
+        "interval": 2,
         "states": {
             // "good": 95,
             "warning": 30,
@@ -407,7 +408,7 @@
         "format": " {status}",
         "format-disabled": "",
         "format-off": "",
-        "interval": 30,
+        "interval": 15,
         "on-click": "blueman-manager",
         "format-no-controller": ""
     },
