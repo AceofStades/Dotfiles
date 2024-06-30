@@ -260,11 +260,13 @@
     },
     // CPU
     "cpu": {
+        "interval": 1,
         "format": "󰍛  {usage}% ",
         "on-click": "kitty -e btop"
     },
     // Memory
     "memory": {
+        "interval": 1,
         "format": " 󰾆  {used:0.1f}G ",
         "on-click": "alacritty -e htop"
     },
