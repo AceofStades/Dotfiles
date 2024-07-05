@@ -23,8 +23,9 @@
 
     // Modules Left
     "modules-left": [
-        "custom/appmenu",
+        //"custom/appmenu",
         "group/hardware",
+        "custom/updater",
         //"group/links",
         //"group/settings",
         //"wlr/taskbar",

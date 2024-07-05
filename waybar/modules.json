@@ -261,19 +261,19 @@
     // CPU
     "cpu": {
         "interval": 1,
-        "format": "󰍛  {usage}% ",
+        "format": "󰍛  {usage}%",
         "on-click": "kitty -e btop"
     },
     // Memory
     "memory": {
         "interval": 1,
-        "format": " 󰾆  {used:0.1f}G ",
+        "format": "󰾆  {used:0.1f}G",
         "on-click": "alacritty -e htop"
     },
     // Harddisc space used
     "disk": {
         "interval": 30,
-        "format": " 󰋊  {percentage_used}% ",
+        "format": " 󰋊  {percentage_used}%",
         "path": "/",
         "on-click": "alacritty -e htop"
     },
@@ -288,7 +288,7 @@
         //"thermal-zone": 0,
         "critical-threshold": 82,
         "format-critical": "{icon} {temperatureC}°C",
-        "format": " {icon} {temperatureC}°C ",
+        "format": "{icon} {temperatureC}°C",
         "format-icons": [
             "󰈸"
         ],
@@ -299,19 +299,17 @@
     },
     // Group Hardware
     "group/hardware": {
-        "orientation": "inherit",
-        "drawer": {
-            "transition-duration": 300,
-            "children-class": "not-memory",
-            "transition-left-to-right": true
-        },
+        //"orientation": "inherit",
+        "orientation": "horizontal",
+        // "drawer": {
+        //    "transition-duration": 300,
+        //    "children-class": "not-memory",
+        //    "transition-left-to-right": true
+        // },
         "modules": [
-            "custom/system",
             "cpu",
             "memory",
-            "temperature",
-            "disk",
-            "hyprland/language"
+            "temperature"
         ],
         "format": "{icon}",
         "format-icons": {
@@ -431,5 +429,13 @@
         "format": "{user}",
         "interval": 60,
         "icon": false,
-    }
+    },
+    // NOTE:! This is only for Arch and Arch Based Distros
+    "custom/updater": {
+        "format": "   {}",
+        "exec": "checkupdates | wc -l",
+        "exec-if": "[[ $(checkupdates | wc -l) ]]",
+        "interval": 15,
+        "on-click": "kitty -T update yay -Syu && notify-send 'The system has been updated'",
+    },
 }
