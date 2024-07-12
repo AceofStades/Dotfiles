@@ -1,5 +1,5 @@
 #!/bin/bash
-## /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  ##
+# /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  ##
 # Script for waybar layout or configs
 
 set -euo pipefail
@@ -38,7 +38,7 @@ restart_waybar_if_needed() {
 
 # Main function
 main() {
-    choice=$(menu | rofi -dmenu -config "$rofi_config")
+    choice=$(menu | rofi -i -dmenu -config "$rofi_config")
 
     if [[ -z "$choice" ]]; then
         echo "No option selected. Exiting."

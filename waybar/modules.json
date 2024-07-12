@@ -197,7 +197,7 @@
     // Power Menu
     "custom/exit": {
         "format": "",
-        "on-click": "wlogout",
+        "on-click": "wlogout --protocol layer-shell -b 5",
         "tooltip-format": "Power Menu"
     },
     // Hyprshade

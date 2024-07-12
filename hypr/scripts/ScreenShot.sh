@@ -1,8 +1,9 @@
 #!/bin/bash
-## /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  ##
+# /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  ##
 # Screenshots scripts
 
 iDIR="$HOME/.config/swaync/icons"
+sDIR="$HOME/.config/hypr/scripts"
 notify_cmd_shot="notify-send -h string:x-canonical-private-synchronous:shot-notify -u low -i ${iDIR}/picture.png"
 
 time=$(date "+%d-%b_%H-%M-%S")
@@ -18,13 +19,17 @@ notify_view() {
     if [[ "$1" == "active" ]]; then
         if [[ -e "${active_window_path}" ]]; then
             ${notify_cmd_shot} "Screenshot of '${active_window_class}' Saved."
+            "${sDIR}/Sounds.sh" --screenshot
         else
             ${notify_cmd_shot} "Screenshot of '${active_window_class}' not Saved"
         fi
+    elif [[ "$1" == "swappy" ]]; then
+		${notify_cmd_shot} "Screenshot Captured."
     else
         local check_file="$dir/$file"
         if [[ -e "$check_file" ]]; then
             ${notify_cmd_shot} "Screenshot Saved."
+            "${sDIR}/Sounds.sh" --screenshot
         else
             ${notify_cmd_shot} "Screenshot NOT Saved."
         fi
@@ -70,7 +75,13 @@ shotwin() {
 }
 
 shotarea() {
-	cd ${dir} && grim -g "$(slurp)" - | tee "$file" | wl-copy
+	tmpfile=$(mktemp)
+	grim -g "$(slurp)" - >"$tmpfile"
+	if [[ -s "$tmpfile" ]]; then
+		wl-copy <"$tmpfile"
+		mv "$tmpfile" "$dir/$file"
+	fi
+	rm "$tmpfile"
 	notify_view
 }
 
@@ -82,6 +93,13 @@ shotactive() {
     hyprctl -j activewindow | jq -r '"\(.at[0]),\(.at[1]) \(.size[0])x\(.size[1])"' | grim -g - "${active_window_path}"
 	sleep 1
     notify_view "active"  
+}
+
+shotswappy() {
+	tmpfile=$(mktemp)
+	grim -g "$(slurp)" - >"$tmpfile" && "${sDIR}/Sounds.sh" --screenshot && notify_view "swappy"
+	swappy -f - <"$tmpfile"
+	rm "$tmpfile"
 }
 
 
@@ -101,8 +119,10 @@ elif [[ "$1" == "--area" ]]; then
 	shotarea
 elif [[ "$1" == "--active" ]]; then
 	shotactive
+elif [[ "$1" == "--swappy" ]]; then
+	shotswappy
 else
-	echo -e "Available Options : --now --in5 --in10 --win --area --active"
+	echo -e "Available Options : --now --in5 --in10 --win --area --active --swappy"
 fi
 
 exit 0

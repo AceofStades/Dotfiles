@@ -9,15 +9,20 @@ dark_wallpapers="$wallpaper_base_path/Dark"
 light_wallpapers="$wallpaper_base_path/Light"
 hypr_config_path="$HOME/.config/hypr"
 swaync_style="$HOME/.config/swaync/style.css"
+ags_style="$HOME/.config/ags/user/style.css"
 SCRIPTSDIR="$HOME/.config/hypr/scripts"
 notif="$HOME/.config/swaync/images/bell.png"
-dark_rofi_pywal="$HOME/.cache/wal/colors-rofi-dark.rasi"
-light_rofi_pywal="$HOME/.cache/wal/colors-rofi-light.rasi"
+wallust_rofi="$HOME/.config/wallust/templates/colors-rofi.rasi"
 
+wallust_config="$HOME/.config/wallust/wallust.toml"
+pallete_dark="dark16"
+pallete_light="light16"
+
+# kill swaybg if running
 pkill swaybg
 
 # Initialize swww if needed
-swww query || swww init
+swww query || swww-daemon
 
 # Set swww options
 swww="swww img"
@@ -43,6 +48,13 @@ update_theme_mode() {
 notify_user() {
     notify-send -u low -i "$notif" "Switching to $1 mode"
 }
+
+# Use sed to replace the palette setting in the wallust config file
+if [ "$next_mode" = "Dark" ]; then
+    sed -i 's/^palette = .*/palette = "'"$pallete_dark"'"/' "$wallust_config" 
+else
+    sed -i 's/^palette = .*/palette = "'"$pallete_light"'"/' "$wallust_config" 
+fi
 
 # Function to set Waybar style
 set_waybar_style() {
@@ -74,6 +86,17 @@ else
 	sed -i '/@define-color noti-bg-alt/s/#.*;/#F0F0F0;/' "${swaync_style}"
 fi
 
+# ags color change
+if [ "$next_mode" = "Dark" ]; then
+    sed -i '/@define-color noti-bg/s/rgba([0-9]*,\s*[0-9]*,\s*[0-9]*,\s*[0-9.]*);/rgba(0, 0, 0, 0.4);/' "${ags_style}"
+	sed -i '/@define-color text-color/s/rgba([0-9]*,\s*[0-9]*,\s*[0-9]*,\s*[0-9.]*);/rgba(255, 255, 255, 0.7);/' "${ags_style}"
+	sed -i '/@define-color noti-bg-alt/s/#.*;/#111111;/' "${ags_style}"
+else
+    sed -i '/@define-color noti-bg/s/rgba([0-9]*,\s*[0-9]*,\s*[0-9]*,\s*[0-9.]*);/rgba(255, 255, 255, 0.4);/' "${ags_style}"
+    sed -i '/@define-color text-color/s/rgba([0-9]*,\s*[0-9]*,\s*[0-9]*,\s*[0-9.]*);/rgba(0, 0, 0, 0.7);/' "${ags_style}"
+	sed -i '/@define-color noti-bg-alt/s/#.*;/#F0F0F0;/' "${ags_style}"
+fi
+
 # Set Dynamic Wallpaper for Dark or Light Mode
 if [ "$next_mode" = "Dark" ]; then
     next_wallpaper="$(find "${dark_wallpapers}" -type f \( -iname "*.jpg" -o -iname "*.png" \) -print0 | shuf -n1 -z | xargs -0)"
@@ -87,25 +110,27 @@ $swww "${next_wallpaper}" $effect
 
 # Set Kvantum Manager theme & QT5/QT6 settings
 if [ "$next_mode" = "Dark" ]; then
-    kvantum_theme="Tokyo-Night"
-    qt5ct_color_scheme="$HOME/.config/qt5ct/colors/Tokyo-Night.conf"
-    qt6ct_color_scheme="$HOME/.config/qt6ct/colors/Tokyo-Night.conf"
+    kvantum_theme="Catppuccin-Mocha"
+    qt5ct_color_scheme="$HOME/.config/qt5ct/colors/Catppuccin-Mocha.conf"
+    qt6ct_color_scheme="$HOME/.config/qt6ct/colors/Catppuccin-Mocha.conf"
 else
-    kvantum_theme="Tokyo-Day"
-    qt5ct_color_scheme="$HOME/.config/qt5ct/colors/Tokyo-Day.conf"
-    qt6ct_color_scheme="$HOME/.config/qt6ct/colors/Tokyo-Day.conf"
+    kvantum_theme="Catppuccin-Latte"
+    qt5ct_color_scheme="$HOME/.config/qt5ct/colors/Catppuccin-Latte.conf"
+    qt6ct_color_scheme="$HOME/.config/qt6ct/colors/Catppuccin-Latte.conf"
 fi
 
-kvantummanager --set "$kvantum_theme"
 sed -i "s|^color_scheme_path=.*$|color_scheme_path=$qt5ct_color_scheme|" "$HOME/.config/qt5ct/qt5ct.conf"
 sed -i "s|^color_scheme_path=.*$|color_scheme_path=$qt6ct_color_scheme|" "$HOME/.config/qt6ct/qt6ct.conf"
+kvantummanager --set "$kvantum_theme"
 
-# Set Rofi Themes
+
+# set the rofi color for background
 if [ "$next_mode" = "Dark" ]; then
-    ln -sf "$dark_rofi_pywal" "$HOME/.config/rofi/pywal-color/pywal-theme.rasi"
+    sed -i '24s/.*/background: rgba(0,0,0,0.7);/' $wallust_rofi
 else
-    ln -sf "$light_rofi_pywal" "$HOME/.config/rofi/pywal-color/pywal-theme.rasi"
+    sed -i '24s/.*/background: rgba(255,255,255,0.9);/' $wallust_rofi
 fi
+
 
 # GTK themes and icons switching
 set_custom_gtk_theme() {
@@ -147,8 +172,10 @@ set_custom_gtk_theme() {
         echo "Selected GTK theme for $mode mode: $selected_theme"
         gsettings set $theme_setting "$selected_theme"
 
-        # Flatpak GTK apps
+        # Flatpak GTK apps (themes)
         if command -v flatpak &> /dev/null; then
+            flatpak --user override --filesystem=$HOME/.themes
+            sleep 0.5
             flatpak --user override --env=GTK_THEME="$selected_theme"
         fi
     else
@@ -168,8 +195,10 @@ set_custom_gtk_theme() {
         sed -i "s|^icon_theme=.*$|icon_theme=$selected_icon|" "$HOME/.config/qt5ct/qt5ct.conf"
         sed -i "s|^icon_theme=.*$|icon_theme=$selected_icon|" "$HOME/.config/qt6ct/qt6ct.conf"
 
-        # Flatpak GTK apps
+        # Flatpak GTK apps (icons)
         if command -v flatpak &> /dev/null; then
+            flatpak --user override --filesystem=$HOME/.icons
+            sleep 0.5
             flatpak --user override --env=ICON_THEME="$selected_icon"
         fi
     else
@@ -185,10 +214,11 @@ update_theme_mode
 
 sleep 0.5
 # Run remaining scripts
-${SCRIPTSDIR}/PywalSwww.sh
+${SCRIPTSDIR}/WallustSwww.sh
 sleep 1
 ${SCRIPTSDIR}/Refresh.sh 
 
+sleep 0.3
 # Display notifications for theme and icon changes
 notify-send -u normal -i "$notif" "Themes in $next_mode Mode"
 
