@@ -12,7 +12,8 @@
     // bg2:    #0860f2E6;
     // bg2:    #00C2C280;
     // bg2:    #00EDED80;
-    bg2:    #40CEDBE6;
+    // bg2:    #40CEDBE6;
+    bg2:    #00357080;
 
     fg0:    #DEDEDE;
     fg1:    #FFFFFF;
