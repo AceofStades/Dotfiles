@@ -7,13 +7,15 @@
 * {
     font:   "JetBrains Mono 12";
 
-    bg0:    #242424E6;
-    bg1:    #7E7E7E80;
+    // bg0:    #242424E6;
+    bg0:    #242424BF;
+    bg1:    #7E7E7E40;
     // bg2:    #0860f2E6;
     // bg2:    #00C2C280;
     // bg2:    #00EDED80;
     // bg2:    #40CEDBE6;
-    bg2:    #00357080;
+    // bg2:    #00357080;
+    bg2:    #cccccc40;
 
     fg0:    #DEDEDE;
     fg1:    #FFFFFF;
@@ -73,15 +75,18 @@ listview {
     lines:      10;
     columns:    1;
 
-    fixed-height:   false;
-    border:         1px 0 0;
-    border-color:   @bg1;
+    fixed-height:   	false;
+    border:         	1px 0 0;
+    border-color:   	@bg1;
+    padding: 		10px 0px 0px 0px;
+    margin:	    	0px 0px 10px 0px;
 }
 
 element {
     padding:            8px 16px;
     spacing:            16px;
     background-color:   transparent;
+    margin:		0px 10px;
 }
 
 element normal active {
@@ -91,6 +96,7 @@ element normal active {
 element selected normal, element selected active {
     background-color:   @bg2;
     text-color:         @fg1;
+    border-radius: 	10;
 }
 
 element-icon {
