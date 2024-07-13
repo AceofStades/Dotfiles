@@ -302,8 +302,16 @@ window#waybar.empty #window {
     margin: 5px 7px 6px 7px;
     opacity:0.8;
     border:3px solid @bordercolor;
+    transition-duration: 0.5s;
 }
 
+#custom-exit:hover {
+    color: @textcolor1;
+    background: red;
+    border-radius: 15px;
+    opacity:0.7;
+    transition-duration: 0.5s;
+}
 /* -----------------------------------------------------
  * Custom Updates
  * ----------------------------------------------------- */
@@ -396,6 +404,13 @@ window#waybar.empty #window {
     margin: 5px 15px 6px 7px;
     opacity:0.7;
     border:3px solid @bordercolor;   
+    transition-duration: 0.5s;
+}
+
+#clock:hover {
+    background-color: #001426;
+    transition-duration: 0.5s;
+    border-radius: 10px;
 }
 
 /* -----------------------------------------------------
@@ -410,11 +425,18 @@ window#waybar.empty #window {
     padding: 2px 10px 0px 10px;
     margin: 5px 7px 6px 7px;
     opacity:0.7;
+    transition-duration: 0.5s;
 }
 
 #pulseaudio.muted {
     background-color: @backgrounddark;
     color: @textcolor1;
+}
+
+#pulseaudio:hover {
+    background-color: #001426;
+    transition-duration: 0.5s;
+    border-radius: 10px;
 }
 
 /* -----------------------------------------------------
@@ -531,6 +553,13 @@ window#waybar.empty #window {
     padding: 0px 15px 0px 15px;
     margin: 5px 7px 6px 7px;
     opacity:0.7;
+    transition-duration: 0.5s;
+}
+
+#custom-updater:hover {
+    background-color: #001426;
+    transition-duration: 0.5s;
+    border-radius: 10px;
 }
 
 /* -----------------------------------------------------

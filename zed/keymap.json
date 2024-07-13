@@ -1,95 +1,79 @@
 [
-    {
-        "context": "Workspace",
-        "bindings": {
-            "alt-`": "terminal_panel::ToggleFocus",
-            "ctrl-j": [
-                "workspace::ActivatePaneInDirection",
-                "Down"
-            ]
-        }
-    },
-    {
-        "context": "Terminal",
-        "bindings": {
-            "alt-`": "workspace::ToggleBottomDock",
-            "ctrl-n": "workspace::NewTerminal",
-            // "ctrl-w": "workspace::CloseWindow",
-        }
-    }
-    // vim
-    {
-        "context": "Editor && (vim_mode == normal || vim_mode == visual) && !VimWaiting && !menu",
-        "bindings": {
-            // put key-bindings here if you want them to work in normal & visual mode
-        }
-    },
-    {
-        "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
-        "bindings": {
-            // put key-bindings here if you want them to work only in normal mode
-            // "down": ["workspace::SendKeystrokes", "4 j"]
-            // "up": ["workspace::SendKeystrokes", "4 k"]
-        }
-    },
-    {
-        "context": "Editor && vim_mode == visual && !VimWaiting && !menu",
-        "bindings": {
-            // visual, visual line & visual block modes
-        }
-    },
-    {
-        "context": "Editor && vim_mode == insert && !menu",
-        "bindings": {
-            // put key-bindings here if you want them to work in insert mode
-            // e.g.
-            // "j j": "vim::NormalBefore" // remap jj in insert mode to escape.
-        }
-    },
-    {
-        "context": "EmptyPane || SharedScreen",
-        "bindings": {
-            // put key-bindings here (in addition to above) if you want them to
-            // work when no editor exists
-            // e.g.
-            // "space f": "file_finder::Toggle"
-        }
-    },
-    {
-        "context": "Dock",
-        "bindings": {
-            "ctrl-h": [
-                "workspace::ActivatePaneInDirection",
-                "Left"
-            ],
-            "ctrl-l": [
-                "workspace::ActivatePaneInDirection",
-                "Right"
-            ],
-            "ctrl-k": [
-                "workspace::ActivatePaneInDirection",
-                "Up"
-            ],
-            "ctrl-j": [
-                "workspace::ActivatePaneInDirection",
-                "Down"
-            ]
-            // ... or other keybindings
-        }
-    },
-    {
-        "context": "Editor && mode == full",
-        "bindings": {
-            "ctrl-h": [
-                "workspace::ActivatePaneInDirection",
-                "Left"
-            ],
-            "ctrl-shift-h": [
-                "buffer_search::Deploy",
-                {
-                    "replace_enabled": true
-                }
-            ],
-        }
-    },
+	{
+		"context": "Workspace",
+		"bindings": {
+			"alt-`": "terminal_panel::ToggleFocus",
+			"ctrl-shift-h": ["workspace::ActivatePaneInDirection", "Left"],
+			"ctrl-shift-l": ["workspace::ActivatePaneInDirection", "Right"],
+			"ctrl-shift-k": ["workspace::ActivatePaneInDirection", "Up"],
+			"ctrl-shift-j": ["workspace::ActivatePaneInDirection", "Down"]
+		}
+	},
+	{
+		"context": "Terminal",
+		"bindings": {
+			"alt-`": "workspace::ToggleBottomDock",
+			"ctrl-n": "workspace::NewTerminal"
+			// "ctrl-w": "workspace::CloseWindow",
+		}
+	},
+	// vim
+	{
+		"context": "Editor && (vim_mode == normal || vim_mode == visual) && !VimWaiting && !menu",
+		"bindings": {}
+	},
+	{
+		"context": "Editor && vim_mode == normal && !VimWaiting && !menu",
+		"bindings": {
+			// put key-bindings here if you want them to work only in normal mode
+			// "down": ["workspace::SendKeystrokes", "4 j"]
+			// "up": ["workspace::SendKeystrokes", "4 k"]
+		}
+	},
+	{
+		"context": "Editor && vim_mode == visual && !VimWaiting && !menu",
+		"bindings": {
+			// visual, visual line & visual block modes
+		}
+	},
+	{
+		"context": "Editor && vim_mode == insert && !menu",
+		"bindings": {
+			// put key-bindings here if you want them to work in insert mode
+			// e.g.
+			// "j j": "vim::NormalBefore" // remap jj in insert mode to escape.
+			"tab": "menu::SelectNext",
+			"shift-tab": "menu::SelectPrev",
+			"enter": "menu::Confirm",
+			"shift-enter": "editor::AcceptPartialCopilotSuggestion"
+		}
+	},
+	{
+		"context": "EmptyPane || SharedScreen",
+		"bindings": {
+			// put key-bindings here (in addition to above) if you want them to
+			// work when no editor exists
+			// e.g.
+			// "space f": "file_finder::Toggle"
+		}
+	},
+	{
+		"context": "Dock",
+		"bindings": {
+			"ctrl-shift-h": ["workspace::ActivatePaneInDirection", "Left"],
+			"ctrl-shift-l": ["workspace::ActivatePaneInDirection", "Right"],
+			"ctrl-shift-k": ["workspace::ActivatePaneInDirection", "Up"],
+			"ctrl-shift-j": ["workspace::ActivatePaneInDirection", "Down"]
+			// ... or other keybindings
+		}
+	},
+	{
+		"context": "Editor && mode == full",
+		"bindings": {
+			"ctrl-shift-h": ["workspace::ActivatePaneInDirection", "Left"],
+			"ctrl-shift-l": ["workspace::ActivatePaneInDirection", "Right"],
+			"ctrl-shift-k": ["workspace::ActivatePaneInDirection", "Up"],
+			"ctrl-shift-j": ["workspace::ActivatePaneInDirection", "Down"]
+		}
+	}
 ]
