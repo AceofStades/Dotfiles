@@ -76,6 +76,7 @@ listview {
     columns:    1;
 
     fixed-height:   	false;
+    scrollbar: 		false;
     border:         	1px 0 0;
     border-color:   	@bg1;
     padding: 		10px 0px 0px 0px;
