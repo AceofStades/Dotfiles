@@ -1,24 +1,23 @@
 /*
- * __        __          _                  ____  _         _       
- * \ \      / /_ _ _   _| |__   __ _ _ __  / ___|| |_ _   _| | ___  
- *  \ \ /\ / / _` | | | | '_ \ / _` | '__| \___ \| __| | | | |/ _ \ 
- *   \ V  V / (_| | |_| | |_) | (_| | |     ___) | |_| |_| | |  __/ 
- *    \_/\_/ \__,_|\__, |_.__/ \__,_|_|    |____/ \__|\__, |_|\___| 
- *                 |___/                              |___/         
- *  
- * by Stephan Raabe (2023) 
- * ----------------------------------------------------- 
+ * __        __          _                  ____  _         _
+ * \ \      / /_ _ _   _| |__   __ _ _ __  / ___|| |_ _   _| | ___
+ *  \ \ /\ / / _` | | | | '_ \ / _` | '__| \___ \| __| | | | |/ _ \
+ *   \ V  V / (_| | |_| | |_) | (_| | |     ___) | |_| |_| | |  __/
+ *    \_/\_/ \__,_|\__, |_.__/ \__,_|_|    |____/ \__|\__, |_|\___|
+ *                 |___/                              |___/
+ *
+ * by Stephan Raabe (2023)
+ * -----------------------------------------------------
 */
 
 /* -----------------------------------------------------
- * Import Pywal colors 
+ * Import Pywal colors
  * ----------------------------------------------------- */
 /* @import 'style-light.css'; */
 
 /* -----------------------------------------------------
- * General 
+ * General
  * ----------------------------------------------------- */
-
 
 @define-color backgroundlight #000000;
 @define-color backgrounddark #000000;
@@ -31,70 +30,66 @@
 @define-color iconcolor #FFFFFF;
 /*@define-color iconcolor #000000;*/
 
-
-
-
-
-
 * {
-    font-family: "Fira Sans Semibold", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    border: none;
-    border-radius: 0px;
+	font-family: "Fira Sans Semibold", FontAwesome, Roboto, Helvetica, Arial,
+		sans-serif;
+	font-size: 14px;
+	border: none;
+	border-radius: 0px;
 }
 
 window#waybar {
-    /*background-color: rgba(0,0,0,0.2);*/
-    /*background-color: rgba(255,255,255,0.1);*/
-    background-color: transparent;
-    border-bottom: 0px solid #ffffff;
-    /* color: #FFFFFF; */
-    transition-property: background-color;
-    transition-duration: .5s;
+	/*background-color: rgba(0,0,0,0.2);*/
+	/*background-color: rgba(255,255,255,0.1);*/
+	background-color: transparent;
+	border-bottom: 0px solid #ffffff;
+	/* color: #FFFFFF; */
+	transition-property: background-color;
+	transition-duration: 0.5s;
 }
 
 /* -----------------------------------------------------
- * Workspaces 
+ * Workspaces
  * ----------------------------------------------------- */
 
 #workspaces {
-    background: @workspacesbackground1;
-    margin: 5px 7px 6px 7px;
-    padding: 0px 1px;
-    border-radius: 15px;
-    border: 0px;
-    font-weight: bold;
-    font-style: normal;
-    opacity: 0.8;
-    font-size: 14px;
-    color: @textcolor1;
+	background: @workspacesbackground1;
+	margin: 5px 7px 6px 7px;
+	padding: 0px 1px;
+	border-radius: 15px;
+	border: 0px;
+	font-weight: bold;
+	font-style: normal;
+	opacity: 0.8;
+	font-size: 14px;
+	color: @textcolor1;
 }
 
 #workspaces button {
-    padding: 0px 5px;
-    margin: 4px 3px;
-    border-radius: 15px;
-    border: 0px;
-    color: @textcolor1;
-    background-color: @workspacesbackground2;
-    transition: all 0.3s ease-in-out;
-    opacity: 0.4;
+	padding: 0px 5px;
+	margin: 4px 3px;
+	border-radius: 15px;
+	border: 0px;
+	color: @textcolor1;
+	background-color: @workspacesbackground2;
+	transition: all 0.3s ease-in-out;
+	opacity: 0.4;
 }
 
 #workspaces button.active {
-    color: @textcolor1;
-    background: @workspacesbackground2;
-    border-radius: 15px;
-    min-width: 40px;
-    transition: all 0.3s ease-in-out;
-    opacity:1.0;
+	color: @textcolor1;
+	background: @workspacesbackground2;
+	border-radius: 15px;
+	min-width: 40px;
+	transition: all 0.3s ease-in-out;
+	opacity: 1;
 }
 
 #workspaces button:hover {
-    color: @textcolor1;
-    background: @workspacesbackground2;
-    border-radius: 15px;
-    opacity:0.7;
+	color: @textcolor1;
+	background: @workspacesbackground2;
+	border-radius: 15px;
+	opacity: 0.7;
 }
 
 /* -----------------------------------------------------
@@ -102,15 +97,15 @@ window#waybar {
  * ----------------------------------------------------- */
 
 tooltip {
-    border-radius: 10px;
-    background-color: @backgroundlight;
-    opacity:0.8;
-    padding:20px;
-    margin:0px;
+	border-radius: 10px;
+	background-color: @backgroundlight;
+	opacity: 0.8;
+	padding: 20px;
+	margin: 0px;
 }
 
 tooltip label {
-    color: @textcolor2;
+	color: @textcolor2;
 }
 
 /* -----------------------------------------------------
@@ -118,22 +113,22 @@ tooltip label {
  * ----------------------------------------------------- */
 
 #window {
-    background: @backgroundlight;
-    margin: 5px 7px 6px 7px;
-    padding: 2px 10px 0px 10px;
-    border-radius: 12px;
-    color:@textcolor2;
-    font-size:14px;
-    font-weight:normal;
-    opacity:0.7;
+	background: @backgroundlight;
+	margin: 5px 7px 6px 7px;
+	padding: 2px 10px 0px 10px;
+	border-radius: 12px;
+	color: @textcolor2;
+	font-size: 14px;
+	font-weight: normal;
+	opacity: 0.7;
 }
 
 window#waybar.empty {
-    background-color:transparent;
+	background-color: transparent;
 }
 
 window#waybar.empty #window {
-    background-color:transparent;
+	background-color: transparent;
 }
 
 /* -----------------------------------------------------
@@ -141,20 +136,20 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #taskbar {
-    background: @backgroundlight;
-    margin: 6px 15px 6px 0px;
-    padding:0px;
-    border-radius: 15px;
-    font-weight: normal;
-    font-style: normal;
-    opacity:0.8;
-    border: 3px solid @backgroundlight;
+	background: @backgroundlight;
+	margin: 6px 15px 6px 0px;
+	padding: 0px;
+	border-radius: 15px;
+	font-weight: normal;
+	font-style: normal;
+	opacity: 0.8;
+	border: 3px solid @backgroundlight;
 }
 
 #taskbar button {
-    margin:0;
-    border-radius: 15px;
-    padding: 0px 5px 0px 5px;
+	margin: 0;
+	border-radius: 15px;
+	padding: 0px 5px 0px 5px;
 }
 
 /* -----------------------------------------------------
@@ -162,91 +157,92 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 .modules-left > widget:first-child > #workspaces {
-    margin-left: 0;
+	margin-left: 0;
 }
 
 .modules-right > widget:last-child > #workspaces {
-    margin-right: 0;
+	margin-right: 0;
 }
 
 /* -----------------------------------------------------
  * Custom Quicklinks
  * ----------------------------------------------------- */
 
-#custom-brave, 
-#custom-browser, 
-#custom-keybindings, 
-#custom-outlook, 
-#custom-filemanager, 
-#custom-teams, 
-#custom-chatgpt, 
-#custom-calculator, 
-#custom-windowsvm, 
-#custom-cliphist, 
-#custom-wallpaper, 
-#custom-settings, 
-#custom-wallpaper, 
+#custom-brave,
+#custom-browser,
+#custom-keybindings,
+#custom-outlook,
+#custom-filemanager,
+#custom-teams,
+#custom-chatgpt,
+#custom-calculator,
+#custom-windowsvm,
+#custom-cliphist,
+#custom-wallpaper,
+#custom-settings,
+#custom-wallpaper,
 #custom-system,
 #custom-hyprshade,
 #custom-hypridle,
 #custom-waybarthemes {
-    margin-right: 23px;
-    font-size: 14px;
-    font-weight: bold;
-    opacity: 0.8;
-    color: @iconcolor;
+	margin-right: 23px;
+	font-size: 14px;
+	font-weight: bold;
+	opacity: 0.8;
+	color: @iconcolor;
 }
 
 #custom-hyprshade {
-    margin-right:12px;
+	margin-right: 12px;
 }
 
 #custom-hypridle {
-    margin-right:18px;
+	margin-right: 18px;
 }
 
 #custom-hypridle.active {
-    color: @iconcolor;
+	color: @iconcolor;
 }
 
 #custom-hypridle.notactive {
-    color: #dc2f2f;
+	color: #dc2f2f;
 }
 
 #custom-system {
-    margin-right:15px;
+	margin-right: 15px;
 }
 
 #custom-wallpaper {
-    margin-right:25px;
+	margin-right: 25px;
 }
 
-#custom-waybarthemes, #custom-settings {
-    margin-right:20px;
+#custom-waybarthemes,
+#custom-settings {
+	margin-right: 20px;
 }
 
 #custom-ml4w-welcome {
-    margin-right: 12px;
-    background-image: url("../assets/ml4w-icon.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    padding-right: 24px;
+	margin-right: 12px;
+	background-image: url("../assets/ml4w-icon.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	padding-right: 24px;
 }
 
 #custom-ml4w-hyprland-settings {
-    margin-right: 12px;
-    background-image: url("../assets/hyprland-icon.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    padding-right: 16px;
+	margin-right: 12px;
+	background-image: url("../assets/hyprland-icon.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	padding-right: 16px;
 }
 
 #custom-chatgpt {
-    margin-right: 12px;
-    background-image: url("../assets/ai-icon-20.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    padding-right: 24px;
+	margin-right: 12px;
+	background-image: url("../assets/ai-icon-20.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	padding-right: 24px;
 }
 
 /* -----------------------------------------------------
@@ -254,19 +250,19 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #idle_inhibitor {
-    margin-right: 17px;
-    font-size: 14px;
-    font-weight: bold;
-    opacity: 0.8;
-    color: @iconcolor;
+	margin-right: 17px;
+	font-size: 14px;
+	font-weight: bold;
+	opacity: 0.8;
+	color: @iconcolor;
 }
 
 #idle_inhibitor.activated {
-    margin-right: 15px;
-    font-size: 14px;
-    font-weight: bold;
-    opacity: 0.8;
-    color: #dc2f2f;
+	margin-right: 15px;
+	font-size: 14px;
+	font-weight: bold;
+	opacity: 0.8;
+	color: #dc2f2f;
 }
 
 /* -----------------------------------------------------
@@ -274,14 +270,14 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #custom-appmenu {
-    background-color: @backgrounddark;
-    font-size: 14px;
-    color: @textcolor1;
-    border-radius: 15px;
-    padding: 0px 10px 0px 10px;
-    margin: 5px 14px 6px 14px;
-    opacity:0.7;
-    border:3px solid @bordercolor;
+	background-color: @backgrounddark;
+	font-size: 14px;
+	color: @textcolor1;
+	border-radius: 15px;
+	padding: 0px 10px 0px 10px;
+	margin: 5px 14px 6px 14px;
+	opacity: 0.7;
+	border: 3px solid @bordercolor;
 }
 
 /* -----------------------------------------------------
@@ -289,55 +285,55 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #custom-exit {
-    /*margin: 0px 20px 0px 0px;*/
-    /*padding:0px;*/
-    /*font-size:14px;*/
-    /*color: @iconcolor;*/
+	/*margin: 0px 20px 0px 0px;*/
+	/*padding:0px;*/
+	/*font-size:14px;*/
+	/*color: @iconcolor;*/
 
-    background-color: #3C0008;
-    font-size: 14px;
-    color: @textcolor1;
-    border-radius: 10px;
-    padding: 0px 15px 0px 10px;
-    margin: 5px 7px 6px 7px;
-    opacity:0.8;
-    border:3px solid @bordercolor;
-    transition-duration: 0.5s;
+	background-color: #3c0008;
+	font-size: 14px;
+	color: @textcolor1;
+	border-radius: 10px;
+	padding: 0px 15px 0px 10px;
+	margin: 5px 7px 6px 7px;
+	opacity: 0.8;
+	border: 3px solid @bordercolor;
+	transition-duration: 0.5s;
 }
 
 #custom-exit:hover {
-    color: @textcolor1;
-    background: red;
-    border-radius: 15px;
-    opacity:0.7;
-    transition-duration: 0.5s;
+	color: @textcolor1;
+	background: red;
+	border-radius: 15px;
+	opacity: 0.7;
+	transition-duration: 0.5s;
 }
 /* -----------------------------------------------------
  * Custom Updates
  * ----------------------------------------------------- */
 
 #custom-updates {
-    background-color: @backgroundlight;
-    font-size: 14px;
-    color: @textcolor2;
-    border-radius: 15px;
-    padding: 2px 10px 0px 10px;
-    margin: 8px 15px 8px 0px;
-    opacity:0.8;
+	background-color: @backgroundlight;
+	font-size: 14px;
+	color: @textcolor2;
+	border-radius: 15px;
+	padding: 2px 10px 0px 10px;
+	margin: 8px 15px 8px 0px;
+	opacity: 0.8;
 }
 
 #custom-updates.green {
-    background-color: @backgroundlight;
+	background-color: @backgroundlight;
 }
 
 #custom-updates.yellow {
-    background-color: #ff9a3c;
-    color: #FFFFFF;
+	background-color: #ff9a3c;
+	color: #ffffff;
 }
 
 #custom-updates.red {
-    background-color: #dc2f2f;
-    color: #FFFFFF;
+	background-color: #dc2f2f;
+	color: #ffffff;
 }
 
 /* -----------------------------------------------------
@@ -345,13 +341,13 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #custom-youtube {
-    background-color: @backgroundlight;
-    font-size: 14px;
-    color: @textcolor2;
-    border-radius: 15px;
-    padding: 2px 10px 0px 10px;
-    margin: 8px 15px 8px 0px;
-    opacity:0.8;
+	background-color: @backgroundlight;
+	font-size: 14px;
+	color: @textcolor2;
+	border-radius: 15px;
+	padding: 2px 10px 0px 10px;
+	margin: 8px 15px 8px 0px;
+	opacity: 0.8;
 }
 
 /* -----------------------------------------------------
@@ -359,36 +355,38 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #hardware {
-    background-color: @backgrounddark;
-    font-size: 14px;
-    color: @textcolor1;
-    border-radius: 15px;
-    padding: 0px 0px 0px 20px;
-    margin: 5px 7px 6px 15px;
-    opacity:0.7;
-    /*border:3px solid @bordercolor;*/
-
+	background-color: @backgrounddark;
+	font-size: 14px;
+	color: @textcolor1;
+	border-radius: 15px;
+	padding: 0px 0px 0px 20px;
+	margin: 5px 7px 6px 15px;
+	opacity: 0.7;
+	/*border:3px solid @bordercolor;*/
 }
 
-#disk,#memory,#cpu,#temperature,#language {
-    margin:0px;
-    padding:0px;
-    font-size:14px;
-    color:@textcolor1;
-
+#disk,
+#memory,
+#cpu,
+#temperature,
+#language {
+	margin: 0px;
+	padding: 0px;
+	font-size: 14px;
+	color: @textcolor1;
 }
 
 #cpu {
-    margin-left: -10px;
-    margin-right: 10px;
+	margin-left: -10px;
+	margin-right: 10px;
 }
 #memory {
-    margin-left: 5px;
-    margin-right: 5px;
+	margin-left: 5px;
+	margin-right: 5px;
 }
 #temperature {
-    margin-left: 10px;
-    margin-right:10px;
+	margin-left: 10px;
+	margin-right: 10px;
 }
 
 /* -----------------------------------------------------
@@ -396,21 +394,21 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #clock {
-    background-color: @backgrounddark;
-    font-size: 14px;
-    color: @textcolor1;
-    border-radius: 15px;
-    padding: 1px 10px 0px 10px;
-    margin: 5px 15px 6px 7px;
-    opacity:0.7;
-    border:3px solid @bordercolor;   
-    transition-duration: 0.5s;
+	background-color: @backgrounddark;
+	font-size: 14px;
+	color: @textcolor1;
+	border-radius: 15px;
+	padding: 1px 10px 0px 10px;
+	margin: 5px 15px 6px 7px;
+	opacity: 0.7;
+	border: 3px solid @bordercolor;
+	transition-duration: 0.5s;
 }
 
 #clock:hover {
-    background-color: #001426;
-    transition-duration: 0.5s;
-    border-radius: 10px;
+	background-color: #001426;
+	transition-duration: 0.5s;
+	border-radius: 10px;
 }
 
 /* -----------------------------------------------------
@@ -418,25 +416,25 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #pulseaudio {
-    background-color: @backgroundlight;
-    font-size: 14px;
-    color: @textcolor2;
-    border-radius: 15px;
-    padding: 2px 10px 0px 10px;
-    margin: 5px 7px 6px 7px;
-    opacity:0.7;
-    transition-duration: 0.5s;
+	background-color: @backgroundlight;
+	font-size: 14px;
+	color: @textcolor2;
+	border-radius: 15px;
+	padding: 2px 10px 0px 10px;
+	margin: 5px 7px 6px 7px;
+	opacity: 0.7;
+	transition-duration: 0.5s;
 }
 
 #pulseaudio.muted {
-    background-color: @backgrounddark;
-    color: @textcolor1;
+	background-color: @backgrounddark;
+	color: @textcolor1;
 }
 
 #pulseaudio:hover {
-    background-color: #001426;
-    transition-duration: 0.5s;
-    border-radius: 10px;
+	background-color: #001426;
+	transition-duration: 0.5s;
+	border-radius: 10px;
 }
 
 /* -----------------------------------------------------
@@ -444,43 +442,45 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #network {
-    background-color: @backgroundlight;
-    font-size: 14px;
-    color: @textcolor2;
-    border-radius: 15px;
-    padding: 2px 10px 0px 10px;
-    margin: 5px 0px 6px 0px;
-    /*opacity:0.7;*/
+	background-color: @backgroundlight;
+	font-size: 14px;
+	color: @textcolor2;
+	border-radius: 15px;
+	padding: 2px 10px 0px 10px;
+	margin: 5px 0px 6px 0px;
+	/*opacity:0.7;*/
 }
 
 #network.ethernet {
-    background-color: @backgroundlight;
-    color: @textcolor2;
+	background-color: @backgroundlight;
+	color: @textcolor2;
 }
 
 #network.wifi {
-    background-color: @backgroundlight;
-    color: @textcolor2;
+	background-color: @backgroundlight;
+	color: @textcolor2;
 }
 
 /* -----------------------------------------------------
  * Bluetooth
  * ----------------------------------------------------- */
 
- #bluetooth, #bluetooth.on, #bluetooth.connected {
-    background-color: @backgroundlight;
-    font-size: 14px;
-    color: @textcolor2;
-    border-radius: 15px;
-    padding: 2px 10px 0px 10px;
-    margin: 5px 0px 6px 0px;
-    /*opacity:0.7;*/
+#bluetooth,
+#bluetooth.on,
+#bluetooth.connected {
+	background-color: @backgroundlight;
+	font-size: 14px;
+	color: @textcolor2;
+	border-radius: 15px;
+	padding: 2px 10px 0px 10px;
+	margin: 5px 0px 6px 0px;
+	/*opacity:0.7;*/
 }
 
 #bluetooth.off {
-    background-color: transparent;
-    padding: 0px;
-    margin: 0px;
+	background-color: transparent;
+	padding: 0px;
+	margin: 0px;
 }
 
 /* -----------------------------------------------------
@@ -488,78 +488,79 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #battery {
-    background-color: @backgroundlight;
-    font-size: 14px;
-    color: @textcolor2;
-    border-radius: 15px;
-    padding: 2px 10px 0px 10px;
-    margin: 5px 0px 6px 0px;
-    /*opacity:0.7;*/
+	background-color: @backgroundlight;
+	font-size: 14px;
+	color: @textcolor2;
+	border-radius: 15px;
+	padding: 2px 10px 0px 10px;
+	margin: 5px 0px 6px 0px;
+	/*opacity:0.7;*/
 }
 
 #battery.charging {
-    color: @textcolor2;
-    background-color: #005c53;
+	color: @textcolor2;
+	background-color: #005c53;
+	margin: 5px 0px 6px 0px;
+	padding: 2px 10px 0px 10px;
 }
 
-
 #battery.plugged {
-    color: @textcolor2;
-    background-color: #003c5c;
+	color: @textcolor2;
+	background-color: #003c5c;
 }
 
 #battery.critical:not(.charging) {
-    color: #ffffff;
-    background-color: #f53c3c;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+	color: #ffffff;
+	background-color: #f53c3c;
+	animation-name: blink;
+	animation-duration: 0.5s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
 }
 
 @keyframes blink {
-    to {
-        background-color: @backgroundlight;
-        color: @textcolor2;
-    }
+	to {
+		background-color: @backgroundlight;
+		color: @textcolor2;
+	}
 }
 
 #battery.critical:not(.charging) {
-    background-color: #f53c3c;
-    color: @textcolor3;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+	background-color: #f53c3c;
+	color: @textcolor3;
+	animation-name: blink;
+	animation-duration: 0.5s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
 }
 
 #laptop {
-    background-color: @backgroundlight;
-    font-size: 14px;
-    /*color: white;*/
-    border-radius: 15px;
-    padding: 0px 0px 0px 5px;
-    margin: 5px 7px 6px 7px;
-    opacity:0.7;
+	background-color: @backgroundlight;
+	font-size: 14px;
+	/*color: white;*/
+	border-radius: 15px;
+	padding: 0px 0px 0px 5px;
+	margin: 5px 7px 6px 7px;
+	opacity: 0.7;
 }
 
 #custom-updater {
-    background-color: @backgrounddark;
-    font-size: 14px;
-    color: @textcolor1;
-    border-radius: 15px;
-    padding: 0px 15px 0px 15px;
-    margin: 5px 7px 6px 7px;
-    opacity:0.7;
-    transition-duration: 0.5s;
+	background-color: @backgrounddark;
+	font-size: 14px;
+	color: @textcolor1;
+	border-radius: 15px;
+	padding: 0px 15px 0px 15px;
+	margin: 5px 7px 6px 7px;
+	opacity: 0.7;
+	transition-duration: 0.5s;
 }
 
 #custom-updater:hover {
-    background-color: #001426;
-    transition-duration: 0.5s;
-    border-radius: 10px;
+	background-color: #001426;
+	transition-duration: 0.5s;
+	border-radius: 10px;
 }
 
 /* -----------------------------------------------------
@@ -567,20 +568,20 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #tray {
-    background-color: @backgrounddark;
-    font-size: 14px;
-    color: @textcolor1;
-    border-radius: 15px;
-    padding: 0px 5px 0px 5px;
-    margin: 5px 7px 6px 7px;
-    opacity:0.7;
-    border:3px solid @bordercolor;
+	background-color: @backgrounddark;
+	font-size: 14px;
+	color: @textcolor1;
+	border-radius: 15px;
+	padding: 0px 5px 0px 5px;
+	margin: 5px 7px 6px 7px;
+	opacity: 0.7;
+	border: 3px solid @bordercolor;
 }
 
 #tray > .passive {
-    -gtk-icon-effect: dim;
+	-gtk-icon-effect: dim;
 }
 
 #tray > .needs-attention {
-    -gtk-icon-effect: highlight;
+	-gtk-icon-effect: highlight;
 }

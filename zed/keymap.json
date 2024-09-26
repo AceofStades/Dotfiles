@@ -1,79 +1,53 @@
 [
 	{
+		"context": "Picker || menu",
+		"bindings": {
+			"shift-tab": "menu::SelectPrev",
+			"tab": "menu::SelectNext"
+		}
+	},
+	{
+		"context": "Editor",
+		"bindings": {
+			"shift-tab": "editor::MoveUp",
+			"tab": "editor::MoveDown"
+		}
+	},
+	{
+		"context": "ProjectSearchBar > Editor",
+		"bindings": {
+			"shift-tab": "search::PreviousHistoryQuery",
+			"tab": "search::NextHistoryQuery"
+		}
+	},
+	{
+		"context": "Editor && (showing_code_actions || showing_completions)",
+		"bindings": {
+			"shift-tab": "editor::ContextMenuPrev",
+			"tab": "editor::ContextMenuNext"
+		}
+	},
+	{
 		"context": "Workspace",
 		"bindings": {
-			"alt-`": "terminal_panel::ToggleFocus",
-			"ctrl-shift-h": ["workspace::ActivatePaneInDirection", "Left"],
-			"ctrl-shift-l": ["workspace::ActivatePaneInDirection", "Right"],
-			"ctrl-shift-k": ["workspace::ActivatePaneInDirection", "Up"],
-			"ctrl-shift-j": ["workspace::ActivatePaneInDirection", "Down"]
+			"ctrl-/": "terminal_panel::ToggleFocus"
 		}
 	},
 	{
-		"context": "Terminal",
+		"context": "Editor",
 		"bindings": {
-			"alt-`": "workspace::ToggleBottomDock",
-			"ctrl-n": "workspace::NewTerminal"
-			// "ctrl-w": "workspace::CloseWindow",
-		}
-	},
-	// vim
-	{
-		"context": "Editor && (vim_mode == normal || vim_mode == visual) && !VimWaiting && !menu",
-		"bindings": {}
-	},
-	{
-		"context": "Editor && vim_mode == normal && !VimWaiting && !menu",
-		"bindings": {
-			// put key-bindings here if you want them to work only in normal mode
-			// "down": ["workspace::SendKeystrokes", "4 j"]
-			// "up": ["workspace::SendKeystrokes", "4 k"]
+			"alt-k": "editor::MoveLineUp",
+			"alt-j": "editor::MoveLineDown",
+			"ctrl-/": "terminal_panel::ToggleFocus"
 		}
 	},
 	{
-		"context": "Editor && vim_mode == visual && !VimWaiting && !menu",
+		"context": "Picker > Editor",
 		"bindings": {
-			// visual, visual line & visual block modes
-		}
-	},
-	{
-		"context": "Editor && vim_mode == insert && !menu",
-		"bindings": {
-			// put key-bindings here if you want them to work in insert mode
-			// e.g.
-			// "j j": "vim::NormalBefore" // remap jj in insert mode to escape.
+			"shift-enter": "picker::ConfirmCompletion",
 			"tab": "menu::SelectNext",
 			"shift-tab": "menu::SelectPrev",
-			"enter": "menu::Confirm",
-			"shift-enter": "editor::AcceptPartialCopilotSuggestion"
-		}
-	},
-	{
-		"context": "EmptyPane || SharedScreen",
-		"bindings": {
-			// put key-bindings here (in addition to above) if you want them to
-			// work when no editor exists
-			// e.g.
-			// "space f": "file_finder::Toggle"
-		}
-	},
-	{
-		"context": "Dock",
-		"bindings": {
-			"ctrl-shift-h": ["workspace::ActivatePaneInDirection", "Left"],
-			"ctrl-shift-l": ["workspace::ActivatePaneInDirection", "Right"],
-			"ctrl-shift-k": ["workspace::ActivatePaneInDirection", "Up"],
-			"ctrl-shift-j": ["workspace::ActivatePaneInDirection", "Down"]
-			// ... or other keybindings
-		}
-	},
-	{
-		"context": "Editor && mode == full",
-		"bindings": {
-			"ctrl-shift-h": ["workspace::ActivatePaneInDirection", "Left"],
-			"ctrl-shift-l": ["workspace::ActivatePaneInDirection", "Right"],
-			"ctrl-shift-k": ["workspace::ActivatePaneInDirection", "Up"],
-			"ctrl-shift-j": ["workspace::ActivatePaneInDirection", "Down"]
+			"alt-enter": ["picker::ConfirmInput", { "secondary": false }]
 		}
 	}
 ]

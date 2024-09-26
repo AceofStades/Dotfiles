@@ -2,8 +2,12 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 export ZSH="$HOME/.oh-my-zsh"
+export EDITOR='nvim'
+export VISUAL='nvim'
 
-ZSH_THEME="random"
+# ZSH_THEME="random"
+ZSH_THEME="eastwood"
+# source $ZSH/themes/random.zsh-theme &>/dev/null   #Does the same work as above without printing random theme generated text
 
 plugins=( 
     git
@@ -36,12 +40,42 @@ pokemon-colorscripts --no-title -s -r
 # To add support for TTYs this line can be optionally added.
 #source ~/.cache/wal/colors-tty.sh
 
-alias manga='manga-cli -p'
-alias anime='ani-cli'
-alias pacman='sudo pacman'
+# alias manga='manga-cli -p'
+# alias anime='ani-cli'
 alias update='sudo pacman -Syu;yay -Syu'
 alias n='nvim'
 alias :q='exit'
 alias obsidian="obsidian --enable-features=UseOzonePlatform --ozone-platform=wayland"
-alias code='code-insiders --enable-features=UseOzonePlatform --ozone-platform=wayland'
+alias c='code-insiders --ozone-platform=wayland'
 alias sn='sudo nvim'
+alias timeshift='sudo timeshift'
+alias z="zeditor"
+alias icat='kitten icat'
+
+function run() {
+  # Get the filename and extension
+  filename="$1"
+  extension="${filename##*.}"
+
+  # Check if file exists
+  if [ ! -f "$filename" ]; then
+    echo "Error: File '$filename' does not exist."
+    return 1
+  fi
+
+  # Compile based on extension
+  case "$extension" in
+    cpp)
+      g++ -o "${filename%.*}" "$filename" && ./"${filename%.*}"
+      ;;
+    c)
+      gcc -o "${filename%.*}" "$filename" && ./"${filename%.*}"
+      ;;
+    *)
+      echo "Error: Unsupported file extension '$extension'."
+      ;;
+  esac
+}
+
+
+export PATH=$PATH:/home/aceofstades/.spicetify:/home/aceofstades/.cargo/bin
