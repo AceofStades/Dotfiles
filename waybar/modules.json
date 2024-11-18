@@ -11,8 +11,8 @@
 {
     // Workspaces
     "hyprland/workspaces": {
-        "on-scroll-up": "hyprctl dispatch workspace r-1",
-        "on-scroll-down": "hyprctl dispatch workspace r+1",
+        // "on-scroll-up": "hyprctl dispatch workspace r-1",
+        // "on-scroll-down": "hyprctl dispatch workspace r+1",
         "on-click": "activate",
         "active-only": false,
         "all-outputs": true,
@@ -438,9 +438,10 @@
     // NOTE:! This is only for Arch and Arch Based Distros
     "custom/updater": {
         "format": "   {}",
+        "hide_empty-text": true,
         "exec": "checkupdates | wc -l",
         "exec-if": "[[ $(checkupdates | wc -l) ]]",
-        "interval": 15,
+        "interval": 300,
         "on-click": "kitty -T update yay -Syu && notify-send 'The system has been updated'"
     }
 }

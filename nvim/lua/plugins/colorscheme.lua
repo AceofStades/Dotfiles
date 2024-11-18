@@ -1,15 +1,24 @@
 return {
-    { "rafi/awesome-vim-colorschemes" },
     {
-        "folke/tokyonight.nvim",
+        "LazyVim/LazyVim",
+        opts = {
+            colorscheme = "carbonfox",
+        },
+    },
+    {
+        "EdenEast/nightfox.nvim",
         opts = {
             transparent = true,
             styles = {
-                sidebars = "transparent",
-                -- floats = "transparent",
-                floats = "dark",
+                sidebar = "transparent",
+                floats = "transparent",
+            },
+            palettes = {
+                -- Custom duskfox with black background
+                carbonfox = {
+                    bg1 = "#000000", -- Black background
+                },
             },
         },
     },
-    { "LazyVim/LazyVim" },
 }

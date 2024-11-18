@@ -7,13 +7,6 @@
 		}
 	},
 	{
-		"context": "Editor",
-		"bindings": {
-			"shift-tab": "editor::MoveUp",
-			"tab": "editor::MoveDown"
-		}
-	},
-	{
 		"context": "ProjectSearchBar > Editor",
 		"bindings": {
 			"shift-tab": "search::PreviousHistoryQuery",
@@ -34,6 +27,12 @@
 		}
 	},
 	{
+		"context": "Terminal",
+		"bindings": {
+			"ctrl-/": "workspace::ToggleBottomDock"
+		}
+	},
+	{
 		"context": "Editor",
 		"bindings": {
 			"alt-k": "editor::MoveLineUp",
@@ -48,6 +47,19 @@
 			"tab": "menu::SelectNext",
 			"shift-tab": "menu::SelectPrev",
 			"alt-enter": ["picker::ConfirmInput", { "secondary": false }]
+		}
+	},
+	{
+		"context": "Editor && showing_completions",
+		"bindings": {
+			"enter": "editor::ConfirmCompletion",
+			"shift-enter": "editor::ComposeCompletion"
+		}
+	},
+	{
+		"context": "Editor && inline_completion && !showing_completions",
+		"bindings": {
+			"shift-enter": "editor::AcceptInlineCompletion"
 		}
 	}
 ]

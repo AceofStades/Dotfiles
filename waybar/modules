@@ -566,11 +566,15 @@
     
 // NOTE:! This is only for Arch and Arch Based Distros  
 "custom/updater":{
-    "format": " {}",
+    // "format": " {}",
+    "format": "",
+    "format-alt": " {}",
     "exec": "checkupdates | wc -l",
     "exec-if": "[[ $(checkupdates | wc -l) ]]",
-    "interval": 15,
-    "on-click": "kitty -T update paru -Syu || yay -Syu && notify-send 'The system has been updated'",
+    "interval": 300,
+	"on-click": "if command -v paru &> /dev/null; then kitty -T update paru -Syu; else kitty -T update yay -Syu; fi && notify-send 'The system has been updated'",
+	"tooltip": true,
+	"tooltip-format": "Left Click: Update System\nArch Linux Only",
 },
     
 "custom/weather": {

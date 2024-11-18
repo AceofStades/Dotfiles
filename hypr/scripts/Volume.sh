@@ -43,7 +43,7 @@ inc_volume() {
     if [ "$(pamixer --get-mute)" == "true" ]; then
         pamixer -u && notify_user
     fi
-    pamixer -i 1 && notify_user
+    pamixer -i 2 && notify_user
     # volumectl down && notify_user
 }
 
@@ -52,7 +52,7 @@ dec_volume() {
     if [ "$(pamixer --get-mute)" == "true" ]; then
         pamixer -u && notify_user
     fi
-    pamixer -d 1 && notify_user
+    pamixer -d 2 && notify_user
     # volumectl up
 }
 
