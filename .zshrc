@@ -4,6 +4,8 @@
 export ZSH="$HOME/.oh-my-zsh"
 export EDITOR='nvim'
 export VISUAL='nvim'
+export XCURSOR_SIZE=22
+export XCURSOR_THEME=macOS
 
 # ZSH_THEME="random"
 ZSH_THEME="eastwood"
@@ -42,7 +44,7 @@ pokemon-colorscripts --no-title -s -r
 
 # alias manga='manga-cli -p'
 # alias anime='ani-cli'
-alias update='sudo pacman -Syu;yay -Syu'
+alias update='yay -Syu'
 alias n='nvim'
 alias :q='exit'
 alias obsidian="obsidian --enable-features=UseOzonePlatform --ozone-platform=wayland"
@@ -51,6 +53,8 @@ alias sn='sudo nvim'
 alias timeshift='sudo timeshift'
 alias z="zeditor"
 alias icat='kitten icat'
+alias syscoms="ssh -i ~/.ssh/iitm 23f2005427@se2001.ds.study.iitm.ac.in"
+alias open='xdg-open'
 
 function run() {
   # Get the filename and extension
@@ -76,6 +80,5 @@ function run() {
       ;;
   esac
 }
-
 
 export PATH=$PATH:/home/aceofstades/.spicetify:/home/aceofstades/.cargo/bin
