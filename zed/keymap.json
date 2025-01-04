@@ -74,6 +74,7 @@
 	{
 		"context": "Editor && vim_mode == normal",
 		"bindings": {
+			"space": null,
 			"space space": "file_finder::Toggle"
 		}
 	},
