@@ -23,7 +23,7 @@
 	{
 		"context": "Workspace",
 		"bindings": {
-			"ctrl-/": ["terminal_panel::ToggleFocus", "vim::MaximizePane"]
+			"ctrl-/": "terminal_panel::ToggleFocus"
 		}
 	},
 	{
