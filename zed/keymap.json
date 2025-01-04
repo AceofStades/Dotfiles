@@ -23,7 +23,7 @@
 	{
 		"context": "Workspace",
 		"bindings": {
-			"ctrl-/": "terminal_panel::ToggleFocus"
+			"ctrl-/": ["terminal_panel::ToggleFocus", "vim::MaximizePane"]
 		}
 	},
 	{
@@ -89,7 +89,15 @@
 			"ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
 			"ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
 			"ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
-			"ctrl-j": ["workspace::ActivatePaneInDirection", "Down"]
+			"ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
+			"shift-l": ["vim::ResizePane", "Widen"],
+			"shift-h": ["vim::ResizePane", "Narrow"],
+			"shift-k": ["vim::ResizePane", "Shorten"],
+			"shift-j": ["vim::ResizePane", "Lengthen"],
+			"ctrl-shift-h": ["workspace::SwapPaneInDirection", "Left"],
+			"ctrl-shift-l": ["workspace::SwapPaneInDirection", "Right"],
+			"ctrl-shift-k": ["workspace::SwapPaneInDirection", "Up"],
+			"ctrl-shift-j": ["workspace::SwapPaneInDirection", "Down"]
 		}
 	}
 ]
