@@ -100,5 +100,13 @@
 			"ctrl-shift-k": ["workspace::SwapPaneInDirection", "Up"],
 			"ctrl-shift-j": ["workspace::SwapPaneInDirection", "Down"]
 		}
+	},
+	{
+		"context": "ProjectPanel && not_editing",
+		"bindings": {
+			"a": "project_panel::NewFile",
+			"r": "project_panel::Rename",
+			"d": ["project_panel::Trash", { "skip_prompt": false }]
+		}
 	}
 ]
