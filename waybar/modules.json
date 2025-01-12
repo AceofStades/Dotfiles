@@ -461,8 +461,6 @@
         "exec": "/usr/bin/python3 ~/.local/bin/mediaplayer.py --player spotify",
         "format": "{}  ",
         "return-type": "json",
-        "on-click": "playerctl play-pause",
-        "on-scroll-up": "playerctl next",
-        "on-scroll-down": "playerctl previous"
+        "on-click": "playerctl --player=spotify play-pause",
     }
 }
