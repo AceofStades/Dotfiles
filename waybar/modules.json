@@ -443,5 +443,26 @@
         "exec-if": "[[ $(checkupdates | wc -l) ]]",
         "interval": 300,
         "on-click": "kitty -T update yay -Syu && notify-send 'The system has been updated'"
+    },
+    // Pomodoro
+    // https://github.com/Andeskjerf/waybar-module-pomodoro
+    "custom/pomodoro": {
+        "format": "{}",
+        "all-outputs": true,
+        "return-type": "json",
+        "hide_empty-text": false,
+        "exec": "~/.local/bin/waybar-module-pomodoro -w 50 -s 10 -l 10 --autow --autob --persist",
+        "on-click": "~/.local/bin/waybar-module-pomodoro toggle",
+        "on-click-right": "~/.local/bin/waybar-module-pomodoro reset"
+    },
+    // MediaPlayer
+    // https://github.com/Alexays/Waybar/blob/master/resources/custom_modules/mediaplayer.py
+    "custom/spotify": {
+        "exec": "/usr/bin/python3 ~/.local/bin/mediaplayer.py --player spotify",
+        "format": "{}  ",
+        "return-type": "json",
+        "on-click": "playerctl play-pause",
+        "on-scroll-up": "playerctl next",
+        "on-scroll-down": "playerctl previous"
     }
 }

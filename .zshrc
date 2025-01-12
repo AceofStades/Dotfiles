@@ -81,4 +81,4 @@ function run() {
   esac
 }
 
-export PATH=$PATH:/home/aceofstades/.spicetify:/home/aceofstades/.cargo/bin
+export PATH=$PATH:/home/aceofstades/.spicetify:/home/aceofstades/.cargo/bin:/home/aceofstades/.local/bin

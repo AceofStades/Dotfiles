@@ -26,6 +26,7 @@
         //"custom/appmenu",
         "group/hardware",
         "custom/updater",
+        "custom/spotify",
         //"group/links",
         //"group/settings",
         //"wlr/taskbar",
@@ -43,6 +44,7 @@
     "modules-right": [
         //"custom/updates",
         "tray",
+        "custom/pomodoro",
         "pulseaudio",
         //"bluetooth",
         //"network",
