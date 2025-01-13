@@ -452,14 +452,14 @@
         "all-outputs": true,
         "return-type": "json",
         "hide_empty-text": false,
-        "exec": "~/.local/bin/waybar-module-pomodoro -w 50 -s 10 -l 10 --autow --autob --persist",
+        "exec": "~/.config/waybar/scripts/waybar-module-pomodoro -w 50 -s 10 -l 10 --autow --autob --persist",
         "on-click": "~/.local/bin/waybar-module-pomodoro toggle",
         "on-click-right": "~/.local/bin/waybar-module-pomodoro reset"
     },
     // MediaPlayer
     // https://github.com/Alexays/Waybar/blob/master/resources/custom_modules/mediaplayer.py
     "custom/spotify": {
-        "exec": "/usr/bin/python3 ~/.local/bin/mediaplayer.py --player spotify",
+        "exec": "/usr/bin/python3 ~/.config/waybar/scripts/mediaplayer.py --player spotify",
         "format": "{}  ",
         "return-type": "json",
         "on-click": "playerctl --player=spotify play-pause",
