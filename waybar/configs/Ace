@@ -25,13 +25,13 @@
     "modules-left": [
         //"custom/appmenu",
         "group/hardware",
-        "custom/updater",
+        "custom/pomodoro",
         "custom/spotify",
         //"group/links",
         //"group/settings",
         //"wlr/taskbar",
         //"group/quicklinks",
-        "hyprland/window",
+        //"hyprland/window",
         "custom/empty"
     ],
 
@@ -43,8 +43,8 @@
     // Modules Right    
     "modules-right": [
         //"custom/updates",
+        "custom/updater",
         "tray",
-        "custom/pomodoro",
         "pulseaudio",
         //"bluetooth",
         //"network",
