@@ -347,6 +347,15 @@ window#waybar.empty #window {
 	transition-duration: 0.5s;
 }
 
+#custom-pomodoro.break {
+    background-color: #D91656;
+}
+
+#custom-pomodoro.work {
+    /*background-color: #243642;*/
+    background-color: #433878;
+}
+
 #custom-spotify {
 	background-color: @backgrounddark;
 	font-size: 14px;
