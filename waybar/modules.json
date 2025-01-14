@@ -439,7 +439,6 @@
     "custom/updater": {
         "format": "   {}",
         "hide_empty-text": true,
-        "return-type": "json",
         "exec": "checkupdates | wc -l",
         "exec-if": "[[ $(checkupdates | wc -l) ]]",
         "interval": 300,

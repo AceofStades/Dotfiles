@@ -43,7 +43,7 @@
     // Modules Right    
     "modules-right": [
         //"custom/updates",
-        "custom/updater",
+        //"custom/updater",
         "tray",
         "pulseaudio",
         //"bluetooth",

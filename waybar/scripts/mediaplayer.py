@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 import gi
-gi.require_version("Playerctl", "2.0")
 from gi.repository import Playerctl, GLib
 from gi.repository.Playerctl import Player
 import argparse
@@ -11,6 +10,7 @@ import gi
 import json
 import os
 from typing import List
+gi.require_version("Playerctl", "2.0")
 
 logger = logging.getLogger(__name__)
 
