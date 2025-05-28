@@ -584,6 +584,17 @@ window#waybar.empty #window {
 	border-radius: 15px;
 }
 
+#custom-WebCam {
+	background-color: @backgrounddark;
+	font-size: 14px;
+	color: @textcolor1;
+	border-radius: 10px;
+	padding: 0px 10px 0px 10px;
+	margin: 5px 4px 6px 4px;
+	opacity: 0.7;
+	transition-duration: 0.5s;
+}
+
 /* -----------------------------------------------------
  * Tray
  * ----------------------------------------------------- */

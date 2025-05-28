@@ -12,8 +12,7 @@
     // General Settings
     "layer": "top",
     "margin-top": 0,
-    "margin-bottom": -9,
-    "layer": "top",
+    "margin-bottom": -9, "layer": "top",
     "margin-left": 0,
     "margin-right": 0,    
     "spacing": 0,
@@ -46,6 +45,7 @@
         //"custom/updater",
         "tray",
         "pulseaudio",
+        "custom/WebCam",
         //"bluetooth",
         //"network",
         //"battery", 

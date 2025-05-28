@@ -2,7 +2,7 @@
 	{
 		"context": "Picker || menu",
 		"bindings": {
-			"shift-tab": "menu::SelectPrevious",
+			"shift-tab": "menu::SelectPrev",
 			"tab": "menu::SelectNext"
 		}
 	},
@@ -16,7 +16,7 @@
 	{
 		"context": "Editor && (showing_code_actions || showing_completions)",
 		"bindings": {
-			"shift-tab": "editor::ContextMenuPrevious",
+			"shift-tab": "editor::ContextMenuPrev",
 			"tab": "editor::ContextMenuNext"
 		}
 	},
@@ -45,7 +45,7 @@
 		"bindings": {
 			"shift-enter": "picker::ConfirmCompletion",
 			"tab": "menu::SelectNext",
-			"shift-tab": "menu::SelectPrevious",
+			"shift-tab": "menu::SelectPrev",
 			"alt-enter": ["picker::ConfirmInput", { "secondary": false }]
 		}
 	},
@@ -66,43 +66,39 @@
 		}
 	},
 	{
-		"context": "Editor && edit_prediction && !showing_completions",
+		"context": "Editor && inline_completion && !showing_completions",
 		"bindings": {
-			"shift-enter": "editor::AcceptEditPrediction"
+			"shift-enter": "editor::AcceptInlineCompletion"
 		}
 	},
 	{
 		"context": "Editor && vim_mode == normal",
 		"bindings": {
 			"space": null,
-			"space space": "file_finder::Toggle",
-			"ctrl-w": "pane::CloseActiveItem",
-			"space e": "workspace::ToggleLeftDock"
+			"space space": "file_finder::Toggle"
 		}
 	},
 	{
 		"context": "BufferSearchBar",
 		"bindings": {
-			"ctrl-h": "workspace::SwapPaneLeft"
+			"ctrl-h": ["workspace::SwapPaneInDirection", "Left"]
 		}
 	},
 	{
 		"context": "ProjectPanel && not_editing || CollabPanel || OutlinePanel || ChatPanel || VimControl || EmptyPane || SharedScreen || MarkdownPreview || KeyContextView",
 		"bindings": {
-			"ctrl-h": "workspace::ActivatePaneLeft",
-			"ctrl-l": "workspace::ActivatePaneRight",
-			"ctrl-k": "workspace::ActivatePaneUp",
-			"ctrl-j": "workspace::ActivatePaneDown",
-			"shift-l": "vim::ResizePaneRight",
-			"shift-h": "vim::ResizePaneLeft",
-			"shift-k": "vim::ResizePaneDown",
-			"shift-j": "vim::ResizePaneUp",
-			"ctrl-shift-h": "workspace::SwapPaneLeft",
-			"ctrl-shift-l": "workspace::SwapPaneRight",
-			"ctrl-shift-k": "workspace::SwapPaneUp",
-			"ctrl-shift-j": "workspace::SwapPaneDown",
-			"space c": "workspace::ToggleRightDock",
-			"space e": "workspace::ToggleLeftDock"
+			"ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
+			"ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
+			"ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
+			"ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
+			"shift-l": ["vim::ResizePane", "Widen"],
+			"shift-h": ["vim::ResizePane", "Narrow"],
+			"shift-k": ["vim::ResizePane", "Shorten"],
+			"shift-j": ["vim::ResizePane", "Lengthen"],
+			"ctrl-shift-h": ["workspace::SwapPaneInDirection", "Left"],
+			"ctrl-shift-l": ["workspace::SwapPaneInDirection", "Right"],
+			"ctrl-shift-k": ["workspace::SwapPaneInDirection", "Up"],
+			"ctrl-shift-j": ["workspace::SwapPaneInDirection", "Down"]
 		}
 	},
 	{

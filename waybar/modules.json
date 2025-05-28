@@ -1,6 +1,5 @@
 //  __  __           _       _
-// |  \/  | ___   __| |_   _| | ___  ___
-// | |\/| |/ _ \ / _` | | | | |/ _ \/ __|
+// |  \/  | ___   __| |_   _| | ___  ___ // | |\/| |/ _ \ / _` | | | | |/ _ \/ __|
 // | |  | | (_) | (_| | |_| | |  __/\__ \
 // |_|  |_|\___/ \__,_|\__,_|_|\___||___/
 //
@@ -461,6 +460,12 @@
         "exec": "/usr/bin/python3 ~/.config/waybar/scripts/mediaplayer.py --player spotify",
         "format": "{}  ",
         "return-type": "json",
-        "on-click": "playerctl --player=spotify play-pause",
+        "on-click": "playerctl --player=spotify play-pause"
+    },
+    "custom/WebCam": {
+        "exec": "/usr/bin/python3 ~/.config/waybar/scripts/WebCam.py",
+        "format": "{}",
+        "return-type": "json",
+        "on-click": "~/.config/hypr/UserScripts/WebCam.sh"
     }
 }
