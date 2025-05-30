@@ -9,12 +9,14 @@ def main():
             result = subprocess.run("lsmod | grep -q uvcvideo", capture_output=True, check=False, shell=True)
             status_text = ""
             if result.returncode == 0:
-                status_text = "󰄀  On"
+                status_text = "On"
+                icon = "󰄀   "
             else:
-                status_text = "󰗟  Off"
+                status_text = "Off"
+                icon = "󰗟   "
 
             output = {
-                "text": status_text,
+                "text": icon + status_text,
                 "tooltip": "Webcam Status: " + status_text # Optional: Add a tooltip
                 }
         except Exception as e:
