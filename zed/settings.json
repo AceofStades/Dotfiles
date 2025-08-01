@@ -79,6 +79,6 @@
 		"editor.active_line.background": "#96969644",
 		"panel.overlay_background": "#00000000",
 		"pane.focused_border": "#00000000",
-		"elevated_surface.background": "#000000ee"
+		"elevated_surface.background": "#000000f0"
 	}
 }
