@@ -29,7 +29,9 @@
 	{
 		"context": "Terminal",
 		"bindings": {
-			"ctrl-/": "workspace::ToggleBottomDock"
+			"ctrl-/": "workspace::ToggleBottomDock",
+			"alt-t": "workspace::NewTerminal",
+			"ctrl-w": "pane::CloseActiveItem"
 		}
 	},
 	{
