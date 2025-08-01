@@ -1,0 +1,26 @@
+{
+  // Each snippet must have a name and body, but the prefix and description are optional.
+  // The prefix is used to trigger the snippet, but when omitted then the name is used.
+  // Use placeholders like $1, $2 or ${1:defaultValue} to define tab stops.
+  // The $0 determines the final cursor position.
+  // Placeholders with the same value are linked.
+  "Competitive Programming": {
+    "prefix": "!cp",
+    "body": [
+    	"#include <bits/stdc++.h>",
+     	"using namespace std;",
+      	"",
+       	"int main() {",
+        "\tios_base::sync_with_stdio(false);",
+        "\tcin.tie(nullptr);",
+        "\tint t;",
+        "\tcin >> t;",
+        "\twhile(t >= 0) {",
+     	"\t\t$0",
+        "\t\tt--;",
+        "\t}",
+      	"}"
+    ],
+    "description": "Starter code for competitive programming"
+  }
+}
