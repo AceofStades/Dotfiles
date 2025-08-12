@@ -72,6 +72,8 @@
 		"panel.background": "#00000000",
 		"border": "#96969610",
 		"border.variant": "#96969610",
+		// "border": "#96969600",
+		// "border.variant": "#96969600",
 		"scrollbar.track.border": "#00000000",
 		"scrollbar.track.background": "#00000000",
 		// "scrollbar.thumb.background": "#00000000",
