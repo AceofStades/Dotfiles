@@ -21,14 +21,16 @@
 		"edit_prediction_provider": "zed"
 	},
 	"agent": {
+		"play_sound_when_agent_done": false,
 		"default_model": {
 			"provider": "copilot_chat",
 			"model": "gpt-4o"
 		}
 	},
+	// "disable_ai": true,
 	"base_keymap": "VSCode",
 	"theme": "Monokai Charcoal (gray)",
-	"buffer_font_family": "JetBrains Mono",
+	"buffer_font_family": "JetBrainsMono Nerd Font",
 	"ui_font_family": "JetBrainsMono Nerd Font",
 	"telemetry": {
 		"diagnostics": false,
@@ -70,10 +72,10 @@
 		"tab.inactive_background": "#00000000",
 		"tab_bar.background": "#00000010",
 		"panel.background": "#00000000",
-		"border": "#96969610",
-		"border.variant": "#96969610",
-		// "border": "#96969600",
-		// "border.variant": "#96969600",
+		// "border": "#96969610",
+		// "border.variant": "#96969610",
+		"border": "#96969600",
+		"border.variant": "#96969600",
 		"scrollbar.track.border": "#00000000",
 		"scrollbar.track.background": "#00000000",
 		// "scrollbar.thumb.background": "#00000000",
@@ -81,6 +83,8 @@
 		"editor.active_line.background": "#96969644",
 		"panel.overlay_background": "#00000000",
 		"pane.focused_border": "#00000000",
-		"elevated_surface.background": "#000000f0"
+		"elevated_surface.background": "#000000f0",
+		"warning.background": "#1abc9c",
+		"warning.border": "#1abc9c"
 	}
 }
