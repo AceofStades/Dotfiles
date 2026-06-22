@@ -1,0 +1,38 @@
+{
+  "settings": {
+    "account": "Google Account",
+    "logged_in": "Logged in to Google Tasks",
+    "not_logged_in": "Not logged in",
+    "login_button": "Login with Google",
+    "refresh_lists": "Refresh Lists",
+    "sync_interval": {
+      "label": "Sync Interval (seconds)",
+      "desc": "How often to automatically sync tasks"
+    },
+    "auto_sync": {
+      "label": "Auto-start Sync",
+      "desc": "Start sync timer automatically"
+    },
+    "show_completed": {
+      "label": "Show Completed Tasks"
+    }
+  },
+  "menu": {
+    "settings": "Widget settings",
+    "create_task": "Create Task",
+    "logout": "Logout"
+  },
+  "panel": {
+    "title": "Google Tasks",
+    "lists": "Lists:",
+    "tab_pending": "Pending",
+    "tab_completed": "Completed",
+    "add_task_placeholder": "Add a new task...",
+    "empty_state": {
+      "message": "No tasks here."
+    }
+  },
+  "widget": {
+    "tasks_today": "Tasks"
+  }
+}

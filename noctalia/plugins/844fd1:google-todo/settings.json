@@ -1,0 +1,7 @@
+{
+  "syncInterval": 300,
+  "showCompleted": true,
+  "autoStartSync": false,
+  "exportFormat": "markdown",
+  "addedToBar": true
+}

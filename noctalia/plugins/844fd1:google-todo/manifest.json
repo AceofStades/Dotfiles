@@ -1,0 +1,29 @@
+{
+    "id": "google-todo",
+    "name": "Google Todo List",
+    "version": "0.1.51",
+    "minNoctaliaVersion": "4.4.1",
+    "author": "AceofStades",
+    "license": "MIT",
+    "repository": "https://github.com/AceofStades/noctalia-plugins",
+    "description": "A robust Google Tasks client that syncs your tasks.",
+    "tags": ["Bar", "Panel", "Productivity"],
+    "entryPoints": {
+        "main": "Main.qml",
+        "barWidget": "BarWidget.qml",
+        "desktopWidget": "DesktopWidget.qml",
+        "panel": "Panel.qml",
+        "settings": "Settings.qml"
+    },
+    "dependencies": {
+        "plugins": []
+    },
+    "metadata": {
+        "defaultSettings": {
+            "syncInterval": 300,
+            "showCompleted": true,
+            "autoStartSync": false,
+            "exportFormat": "markdown"
+        }
+    }
+}
